@@ -1,6 +1,10 @@
 # cache
 .vscode/
 .cache/
+.gatsby-context.js
+.DS_Store
+.intermediate-representation/
+.env
 
 # project folder
 node_modules/
