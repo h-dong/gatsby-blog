@@ -1,25 +1,25 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import FontAwesome from 'react-fontawesome';
 
-const BlogPost = ({node}) => {
+const BlogPost = ({ node }) => {
     return (
-        <div style={{
-            marginBottom: '1.5rem',
-            padding: '1.5rem',
-            border: '1px solid #ccc'
-        }}>
-            <h3><Link to={node.slug}>{node.title}</Link></h3>
-            <p>{node.createdAt}</p>
-            <div>
-                <div>{node.description.childMarkdownRemark.excerpt}</div>
+        <article className="card">
+            <h1 className="card-title">
+                <Link to={node.slug}>{node.title}</Link>
+            </h1>
+            <div className="card-meta">{node.createdAt}</div>
+            <div className="card-content" dangerouslySetInnerHTML={{ __html: node.description.childMarkdownRemark.html }} />
+            <div className="card-action">
+                <Link to={node.slug}>
+                    Read More <FontAwesome name='chevron-right' />
+                </Link>
             </div>
-        </div>
+        </article>
     )
 }
 
 const IndexPage = (props) => {
-
-    console.log(props)
     return (
         <div>
             {props.data.allContentfulBlogPost.edges.map((edge) => <BlogPost key={edge.node.id} node={edge.node} />)}
@@ -41,21 +41,15 @@ export const pageQuery = graphql`
         ) {
           edges {
             node {
-              id
-              title
-              slug
-              createdAt(formatString: "MMMM DD, YYYY")
-              description {
-                childMarkdownRemark {
-                    html
+                id
+                title
+                slug
+                createdAt(formatString: "DD-MM-YYYY")
+                description {
+                    childMarkdownRemark {
+                        html
+                    }
                 }
-              }
-              body {
-                  childMarkdownRemark {
-                      html
-                  }
-              }
-              tags
             }
           }
         }

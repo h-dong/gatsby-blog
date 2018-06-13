@@ -1,0 +1,33 @@
+.body-container {
+    padding: 0 60px;
+    max-width: 1150px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    text-rendering: optimizespeed;
+
+    & > main {
+        display: flex;
+
+        & > section {
+            padding-right: 50px;
+            padding-top: 20px;
+
+            @media screen and (min-width: 48em) {
+                width: 75%;
+            }
+        }
+
+        & > aside {
+            border-left: 1px solid $grey3;
+            padding-left: 35px;
+            margin-top: 40px;
+            padding-bottom: 20px;
+            word-wrap: break-word;
+
+            @media screen and (min-width: 48em) {
+                width: 25%;
+            }
+        }
+    }
+
+}

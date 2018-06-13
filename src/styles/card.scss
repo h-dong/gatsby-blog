@@ -1,0 +1,58 @@
+.card {
+    padding: 25px 0 15px;
+
+    &-title {
+        margin: 0;
+        text-align: left;
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 1.1;
+        margin-bottom: 15px;
+
+        a {
+            color: $grey1;
+            text-decoration: none;
+        }
+    }
+
+    &-meta {
+        padding: 0;
+        margin: 15px 0 0;
+        color: #6E7173;
+        font-family: $pingFang;
+        display: inline;
+        text-indent: .15em;
+    }
+
+    &-content {
+        clear: left;
+        font-size: 15px;
+        line-height: 1.77;
+        font-family: $pingFang;
+        color: #444;
+        padding-top: 15px;
+        text-align: justify;
+        word-break: break-word;
+
+        p {
+            margin-top: 0;
+        }
+    }
+
+    &-action {
+        a {
+            font-size: 14px;
+            color: $grey0;
+            margin: -10px 0;
+            padding: 5px 10px;
+            border: 1px solid $grey3;
+            border-radius: 5px;
+            float: right;
+            text-decoration: none;
+
+            span {
+                color: $grey0;
+            }
+        }
+    }
+}

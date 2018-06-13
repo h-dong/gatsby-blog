@@ -2,12 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 class BlogPost extends Component {
-    constructor() {
-        super();
-        console.log('props:', this.props)
-    }
     render() {
-        console.log('props:', this.props)
         const { title, createdAt, description, body } = this.props.data.contentfulBlogPost
         return (
             <div>

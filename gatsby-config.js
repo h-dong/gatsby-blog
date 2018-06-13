@@ -2,7 +2,7 @@ require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
-      title: 'Hao\' learning log',
+      title: 'Hao\'s learning log',
   },
   plugins: [
       {
@@ -13,6 +13,7 @@ module.exports = {
           },
       },
       'gatsby-plugin-react-helmet',
-      'gatsby-transformer-remark'
+      'gatsby-transformer-remark',
+      'gatsby-plugin-sass'
   ],
 };
