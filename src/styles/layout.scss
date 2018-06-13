@@ -9,23 +9,27 @@
         display: flex;
 
         & > section {
-            padding-right: 50px;
-            padding-top: 20px;
-
             @media screen and (min-width: 48em) {
                 width: 75%;
+            }
+
+            .cards {
+                padding-right: 50px;
+                padding-top: 20px;
             }
         }
 
         & > aside {
-            border-left: 1px solid $grey3;
-            padding-left: 35px;
-            margin-top: 40px;
-            padding-bottom: 20px;
-            word-wrap: break-word;
-
             @media screen and (min-width: 48em) {
                 width: 25%;
+            }
+
+            #side-bar {
+                border-left: 1px solid $grey3;
+                padding-left: 35px;
+                margin-top: 40px;
+                padding-bottom: 20px;
+                word-wrap: break-word;
             }
         }
     }

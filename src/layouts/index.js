@@ -20,6 +20,7 @@ const Layout = ({ children, data }) => (
         {children()}
       </section>
       <aside>
+        <div id="side-bar">
           <section>
               <h1>Links</h1>
               <ul>
@@ -34,6 +35,7 @@ const Layout = ({ children, data }) => (
                   <li><a href="#">Link 2</a></li>
               </ul>
           </section>
+        </div>
       </aside>
     </main>
   </div>

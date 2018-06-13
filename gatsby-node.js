@@ -17,20 +17,20 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                     }
                 }
             `).then((result) => {
-                    if (result.errors) {
-                        reject(result.errors)
-                    }
-                    result.data.allContentfulBlogPost.edges.forEach((edge) => {
-                        createPage({
-                            path: edge.node.slug,
-                            component: blogPostTemplate,
-                            context: {
-                                slug: edge.node.slug
-                            }
-                        })
+                if (result.errors) {
+                    reject(result.errors)
+                }
+                result.data.allContentfulBlogPost.edges.forEach((edge) => {
+                    createPage({
+                        path: edge.node.slug,
+                        component: blogPostTemplate,
+                        context: {
+                            slug: edge.node.slug
+                        }
                     })
-                    return
                 })
+                return
+            })
         )
     })
 }
