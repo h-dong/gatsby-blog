@@ -16,29 +16,30 @@
     }
 
     &-meta {
-        padding: 0;
-        margin: 15px 0 0;
         color: #6E7173;
         font-family: $pingFang;
-        display: inline;
+        display: inline-block;
         text-indent: .15em;
-    }
 
-    &-content {
-        clear: left;
-        font-size: 15px;
-        line-height: 1.77;
-        font-family: $pingFang;
-        color: #444;
-        padding-top: 15px;
-        text-align: justify;
-        word-break: break-all;
-        hyphens: auto;
-
-        p {
-            margin-top: 0;
+        svg {
+            margin-top: -2px;
         }
     }
+
+    // &-content {
+    //     p {
+    //         clear: left;
+    //         font-size: 15px;
+    //         line-height: 1.77;
+    //         font-family: $pingFang;
+    //         color: #444;
+    //         padding-top: 15px;
+    //         text-align: justify;
+    //         word-break: break-all;
+    //         hyphens: auto;
+    //         margin-top: 0;
+    //     }
+    // }
 
     &-action {
         a {
@@ -50,6 +51,7 @@
             border-radius: 5px;
             float: right;
             text-decoration: none;
+            font-family: "PingFangSC-Regular", Helvetica, "Helvetica Neue", "Segoe UI", "Hiragino Sans GB", "Source Han Sans CN", "Microsoft YaHei", "STHeiti", "WenQuanYi Micro Hei", sans-serif;
 
             span {
                 color: $grey0;

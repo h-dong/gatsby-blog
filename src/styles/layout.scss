@@ -9,13 +9,11 @@
         display: flex;
 
         & > section {
+            padding-right: 50px;
+            padding-top: 20px;
+
             @media screen and (min-width: 48em) {
                 width: 75%;
-            }
-
-            .cards {
-                padding-right: 50px;
-                padding-top: 20px;
             }
         }
 

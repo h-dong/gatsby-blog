@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import FontAwesome from 'react-fontawesome';
+import ChevronRight from 'react-icons/lib/md/chevron-right'
+import Calendar from 'react-icons/lib/fa/calendar'
 
 const BlogPost = ({ node }) => {
     return (
@@ -8,11 +9,11 @@ const BlogPost = ({ node }) => {
             <h1 className="card-title">
                 <Link to={node.slug}>{node.title}</Link>
             </h1>
-            <div className="card-meta">{node.createdAt}</div>
+            <div className="card-meta"><Calendar /> <span>{node.createdAt}</span></div>
             <div className="card-content" lang="en" dangerouslySetInnerHTML={{ __html: node.description.childMarkdownRemark.html }} />
             <div className="card-action">
                 <Link to={node.slug}>
-                    Read More <FontAwesome name='chevron-right' />
+                    Read More <ChevronRight />
                 </Link>
             </div>
         </article>
