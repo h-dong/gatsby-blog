@@ -9,9 +9,9 @@ const Header = ({ siteTitle }) => {
 
   const navLinks = [];
 
-  const windowGlobal = typeof window !== 'undefined' && window
+  const windowLocationPath = (window) ? window.location.pathname : false;
 
-  if (windowGlobal.location.pathname === aboutPath) {
+  if (windowLocationPath === aboutPath) {
     navLinks.push(<Link key="home" to="/" ><Home /> Home</Link>);
     navLinks.push(<Link key="about" to={aboutPath} className="current"><Me /> About Me</Link>);
   } else {
