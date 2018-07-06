@@ -1,11 +1,13 @@
 import React from 'react'
-import Link from "gatsby-link";
+import Link from "gatsby-link"
+import ChevronRight from 'react-icons/lib/md/chevron-right'
+import ChevronLeft from 'react-icons/lib/md/chevron-left'
 
 const NavLink = props => {
     if (!props.test) {
-        return <Link className={props.className} to={props.url}>{props.text}</Link>;
+        return <Link className={props.className} to={props.url}>{props.children}</Link>;
     } else {
-        return <span className={props.className}>{props.text}</span>;
+        return <span className={props.className}>{props.children}</span>;
     }
 };
 
@@ -31,8 +33,8 @@ const Pagination = ({ currentPage, pageCount, firstPage, lastPage }) => {
 
         let link = null;
 
-        if (showPageButton(i, currentPage)) {
-            link = <NavLink key={i} className={currentStyle} test={currentPage === i} url={url} text={i} />;
+        if (pageCount <= 5|| showPageButton(i, currentPage)) {
+            link = <NavLink key={i} className={currentStyle} test={currentPage === i} url={url}>{i}</NavLink>;
         } else {
             const lastIndex = i - 1;
             if (showPageButton(lastIndex, currentPage)) {
@@ -45,9 +47,9 @@ const Pagination = ({ currentPage, pageCount, firstPage, lastPage }) => {
 
     return (
         <nav id="pagination">
-            { (firstPage) ?  null : <NavLink className="previous" test={firstPage} url={previousUrl} text="Previous" /> }
+            { (firstPage) ?  null : <NavLink className="previous" test={firstPage} url={previousUrl}><ChevronLeft /> Last</NavLink> }
             {pages}
-            { (lastPage) ?  null : <NavLink className="next" test={lastPage} url={nextUrl} text="Next" /> }
+            { (lastPage) ?  null : <NavLink className="next" test={lastPage} url={nextUrl}>Next <ChevronRight /></NavLink> }
         </nav>
     );
 };
