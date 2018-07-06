@@ -2,7 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-import Header from '../components/header'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 import '../styles/index.scss'
 
 const Layout = ({ children, data }) => (
@@ -38,6 +39,7 @@ const Layout = ({ children, data }) => (
         </div>
       </aside>
     </main>
+    <Footer />
   </div>
 )
 
