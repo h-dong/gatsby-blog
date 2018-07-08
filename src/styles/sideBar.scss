@@ -1,0 +1,42 @@
+#side-bar {
+    border-left: 1px solid $grey3;
+    padding-left: 35px;
+    margin-top: 40px;
+    padding-bottom: 20px;
+    word-wrap: break-word;
+    section {
+        margin-bottom: 20px;
+
+        .title {
+            color: #6E7173;
+            line-height: 2.7;
+            margin-top: 0;
+            font-size: 16px;
+            border-bottom: 1px solid #ddd;
+            display: block;
+            font-weight: normal;
+
+            svg {
+                margin-top: -2px;
+            }
+        }
+
+        .content {
+            margin-top: 10px;
+            word-wrap: break-word;
+
+            a {
+                display: inline-block;
+                font-size: 15px;
+                line-height: 1.5;
+                padding: 5px;
+            }
+        }
+
+        &.tags {
+            a {
+                padding: 2px 5px;
+            }
+        }
+    }
+}

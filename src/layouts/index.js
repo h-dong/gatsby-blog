@@ -4,57 +4,75 @@ import Helmet from 'react-helmet'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import SideBar from '../components/SideBar';
 import '../styles/index.scss'
 
-const Layout = ({ children, data }) => (
-  <div className="body-container">
-    <Helmet
-      title={data.site.siteMetadata.title}
-      meta={[
-        { name: 'description', content: 'Hi there, I\'m a software developer in London. I share pretty much everything and anything I find interesting on this blog.' },
-        { name: 'keywords', content: 'code, development, ux, programming, languages, frameworks, libraries, experiences' },
-      ]}
-    />
-    <Header siteTitle={data.site.siteMetadata.title} />
-    <main>
-      <section>
-        {children()}
-      </section>
-      <aside>
-        <div id="side-bar">
-          <section>
-              <h1>Links</h1>
-              <ul>
-                  <li><a href="#">Link 1</a></li>
-                  <li><a href="#">Link 2</a></li>
-              </ul>
-          </section>
-          <section>
-              <h1>Links</h1>
-              <ul>
-                  <li><a href="#">Link 1</a></li>
-                  <li><a href="#">Link 2</a></li>
-              </ul>
-          </section>
+const Layout = ({ children, data }) => {
+    const site = data.site;
+    let allTags = [];
+
+    data.allContentfulBlogPost.edges.forEach(edge => {
+        if (edge.node.tags) allTags = allTags.concat(edge.node.tags);
+    });
+
+    allTags = allTags.filter(function (value, index, self) {
+        return self.indexOf(value) === index;
+    });
+
+    const recentArticles = [];
+
+    for (let i = 0; i < 5; i += 1) {
+        console.log(data.allContentfulBlogPost.edges[i]);
+        const article = data.allContentfulBlogPost.edges[i];
+        recentArticles.push({ title: article.node.title, slug: article.node.slug });
+    }
+
+    return (
+        <div className="body-container">
+            <Helmet
+                title={site.siteMetadata.title}
+                meta={[
+                    { name: 'description', content: 'Hi there, I\'m a software developer in London. I share pretty much everything and anything I find interesting on this blog.' },
+                    { name: 'keywords', content: 'code, development, ux, programming, languages, frameworks, libraries, experiences' },
+                ]}
+            />
+            <Header siteTitle={site.siteMetadata.title} />
+            <main>
+                <section>
+                    {children()}
+                </section>
+                <aside>
+                    <SideBar tags={allTags} articles={recentArticles} />
+                </aside>
+            </main>
+            <Footer />
         </div>
-      </aside>
-    </main>
-    <Footer />
-  </div>
-)
+    )
+}
 
 Layout.propTypes = {
-  children: PropTypes.func,
+    children: PropTypes.func,
 }
 
 export default Layout
 
 export const query = graphql`
-  query SiteTitleQuery {
-    site {
-      siteMetadata {
-        title
-      }
+    query SiteTitleQuery {
+        site {
+            siteMetadata {
+                title
+            }
+        }
+        allContentfulBlogPost(
+            sort: { fields: [publishDate], order: DESC }
+        ) {
+            edges {
+                node {
+                    slug
+                    title
+                    ...allTags
+                }
+            }
+        }
     }
-  }
 `

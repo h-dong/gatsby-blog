@@ -7,6 +7,10 @@ nav#pagination {
     text-align: center;
     font-family: $pingFang;
 
+    .hidden {
+        visibility: hidden;
+    }
+
     a {
         display: inline-block;
         height: 25px;

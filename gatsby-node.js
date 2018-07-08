@@ -16,6 +16,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                                 id
                                 slug
                                 title
+                                tags
                                 publishDate(formatString: "DD-MM-YYYY")
                                 description {
                                     childMarkdownRemark {

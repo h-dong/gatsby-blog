@@ -16,8 +16,21 @@ module.exports = {
         {
             resolve: `gatsby-plugin-sitemap`
         },
+        {
+            resolve: `gatsby-plugin-manifest`,
+            options: {
+              name: "Hao's learning log",
+              short_name: "Hao's blog",
+              start_url: "/",
+              background_color: "#f7f0eb",
+              theme_color: "#a2466c",
+              display: "minimal-ui",
+              icon: "src/assets/icon.svg", // This path is relative to the root of the site.
+            },
+          },
         'gatsby-plugin-react-helmet',
         'gatsby-transformer-remark',
-        'gatsby-plugin-sass'
+        'gatsby-plugin-sass',
+        `gatsby-plugin-offline`
     ],
 };
