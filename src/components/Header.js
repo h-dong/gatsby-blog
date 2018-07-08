@@ -26,7 +26,7 @@ const Header = ({ siteTitle }) => {
       <p>Development, UX, Programming Languages, Frameworks, Libraries, experiences and anything random.</p>
       <nav-menu>
         {navLinks}
-        <a><RSS /> RSS</a>
+        <Link to="/rss.xml"><RSS /> RSS</Link>
       </nav-menu>
     </header>
   );
