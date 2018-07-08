@@ -35,10 +35,15 @@ module.exports = {
                 feeds: [{
                     serialize: ({ query: { site, allContentfulBlogPost } }) => {
                         return allContentfulBlogPost.edges.map(edge => {
+                            // TODO: remove published and updated
+
                             return {
+                                title: edge.node.title,
                                 url: `${site.siteMetadata.siteUrl}/${edge.node.slug}`,
                                 guid: `${site.siteMetadata.siteUrl}/${edge.node.slug}`,
-                                description: [{ "content:encoded": edge.node.description.childMarkdownRemark.html }],
+                                description: edge.node.description.childMarkdownRemark.html,
+                                published: edge.node.publishDate,
+                                updated: edge.node.updatedAt
                             };
                         });
                     },
@@ -52,7 +57,8 @@ module.exports = {
                                         node {
                                             slug
                                             title
-                                            publishDate(formatString: "DD-MM-YYYY")
+                                            publishDate
+                                            updatedAt
                                             description {
                                                 childMarkdownRemark {
                                                     html
