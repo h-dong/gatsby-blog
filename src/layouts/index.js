@@ -8,7 +8,7 @@ import SideBar from '../components/SideBar';
 import '../styles/index.scss'
 
 const Layout = ({ children, data }) => {
-    console.log('layout');
+    console.log('layout', children);
     const site = data.site;
     let allTags = [];
 
