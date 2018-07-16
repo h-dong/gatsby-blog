@@ -88,7 +88,6 @@ module.exports = {
         'gatsby-plugin-react-helmet',
         'gatsby-transformer-remark',
         'gatsby-plugin-sass',
-        `gatsby-plugin-netlify`,
         {
             resolve: `gatsby-plugin-offline`,
             options: {
