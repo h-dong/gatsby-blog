@@ -3,6 +3,7 @@ require('dotenv').config()
 module.exports = {
     siteMetadata: {
         siteUrl: `https://haodong.io`,
+        author: 'Hao Dong',
         title: 'Hao\'s learning log',
         description: 'Development, UX, Programming Languages, Frameworks, Libraries, experiences and anything random.'
     },
@@ -88,11 +89,7 @@ module.exports = {
         'gatsby-plugin-react-helmet',
         'gatsby-transformer-remark',
         'gatsby-plugin-sass',
-        {
-            resolve: `gatsby-plugin-offline`,
-            options: {
-                navigateFallback: `/404`
-            }
-        }
+        `gatsby-plugin-offline`,
+        `gatsby-plugin-remove-trailing-slashes`
     ],
 };
