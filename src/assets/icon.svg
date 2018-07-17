@@ -1,5 +1,6 @@
 <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="123.803" height="503.607" transform="translate(0 4.19672)" fill="#673AB7"/>
-<rect width="123.803" height="142.689" transform="translate(194.098 184.656)" fill="#673AB7"/>
-<rect width="123.803" height="512" transform="translate(388.197)" fill="#673AB7"/>
+<circle cx="256" cy="256" r="256" fill="white"/>
+<rect width="73.75" height="300" transform="translate(103 106.5)" fill="#673AB7"/>
+<rect width="73.75" height="85" transform="translate(218.625 214)" fill="#673AB7"/>
+<rect width="73.75" height="305" transform="translate(334.25 104)" fill="#673AB7"/>
 </svg>
