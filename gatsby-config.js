@@ -16,24 +16,6 @@ module.exports = {
             },
         },
         {
-            resolve: `gatsby-plugin-favicon`,
-            options: {
-                logo: './src/assets/icon.svg',
-                injectHTML: true,
-                icons: {
-                android: true,
-                appleIcon: true,
-                appleStartup: true,
-                coast: false,
-                favicons: true,
-                firefox: true,
-                twitter: false,
-                yandex: false,
-                windows: false
-                }
-            }
-        },
-        {
             resolve: `gatsby-plugin-sitemap`
         },
         {
@@ -99,7 +81,7 @@ module.exports = {
                 short_name: 'Hao\'s blog',
                 start_url: '/',
                 background_color: '#fff',
-                theme_color: '#a2466c',
+                theme_color: '#555',
                 display: 'minimal-ui',
                 icon: 'src/assets/icon.svg', // This path is relative to the root of the site.
             },

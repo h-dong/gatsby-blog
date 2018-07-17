@@ -4,8 +4,10 @@ import Helmet from 'react-helmet'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import SideBar from '../components/SideBar';
+import SideBar from '../components/SideBar'
 import '../styles/index.scss'
+
+import icon from '../assets/icon.svg'
 
 const Layout = ({ children, data }) => {
     const site = data.site;
@@ -33,6 +35,9 @@ const Layout = ({ children, data }) => {
                 meta={[
                     { name: 'description', content: 'Hi there, I\'m a software developer in London. I share pretty much everything and anything I find interesting on this blog.' },
                     { name: 'keywords', content: 'code, development, ux, programming, languages, frameworks, libraries, experiences' },
+                ]}
+                link={[
+                    { rel: 'shortcut icon', type: 'image/svg', href: `${icon}` }
                 ]}
             />
             <Header siteTitle={site.siteMetadata.title} />
