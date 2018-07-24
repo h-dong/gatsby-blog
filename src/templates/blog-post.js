@@ -1,21 +1,16 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import Calendar from 'react-icons/lib/fa/calendar'
 
 class BlogPost extends Component {
     render() {
         const { title, createdAt, description, body } = this.props.data.contentfulBlogPost
         return (
-            <div>
-                <h1 style={{
-                    borderBottom: '1px solid #ccc',
-                    paddingBottom: '0.5rem'
-                }}>
-                    {title}
-                </h1>
-                <p>{createdAt}</p>
-                <hr />
+            <div className="post">
+                <h1 className="post-title">{title}</h1>
+                <div className="post-meta"><Calendar /> {createdAt}</div>
                 <div dangerouslySetInnerHTML={{ __html: description.childMarkdownRemark.html }} />
-                <div dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.html }} />
+                <div className="post-content" dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.html }} />
             </div>
         )
     }
