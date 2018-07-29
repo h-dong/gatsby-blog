@@ -14,6 +14,9 @@ const Header = ({ siteTitle }) => {
   if (windowLocationPath === aboutPath) {
     navLinks.push(<Link key="home" to="/" ><Home /> Home</Link>);
     navLinks.push(<Link key="about" to={aboutPath} className="current"><Me /> About Me</Link>);
+  } else if (windowLocationPath.includes('/tag')) {
+    navLinks.push(<Link key="home" to="/"><Home /> Home</Link>);
+    navLinks.push(<Link key="about" to={aboutPath} ><Me /> About Me</Link>);
   } else {
     navLinks.push(<Link key="home" to="/" className="current"><Home /> Home</Link>);
     navLinks.push(<Link key="about" to={aboutPath} ><Me /> About Me</Link>);
