@@ -1,16 +1,22 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Calendar from 'react-icons/lib/fa/calendar'
+import Tag from 'react-icons/lib/fa/tag'
 
 class BlogPost extends Component {
     render() {
-        const { title, createdAt, description, body } = this.props.data.contentfulBlogPost
+        const { title, createdAt, tags, description, body } = this.props.data.contentfulBlogPost
+        const blogTags = (tags) ? tags.map((tag, index) => <a key={index} href={`/tags/${tag}`}><Tag /> {tag}</a>) : null;
+
         return (
             <div className="post">
                 <h1 className="post-title">{title}</h1>
-                <div className="post-meta"><Calendar /> {createdAt}</div>
+                <div className="post-meta">
+                    <Calendar /> {createdAt}
+                </div>
                 <div dangerouslySetInnerHTML={{ __html: description.childMarkdownRemark.html }} />
                 <div className="post-content" dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.html }} />
+                <div className="post-tags">{blogTags}</div>
             </div>
         )
     }
@@ -27,6 +33,7 @@ export const pageQuery = graphql`
         contentfulBlogPost(slug: {eq: $slug})  {
             title
             createdAt(formatString: "MMMM DD, YYYY")
+            tags
             description {
                 childMarkdownRemark {
                     html

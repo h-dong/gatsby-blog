@@ -1,13 +1,13 @@
 .post {
     padding-top: 25px;
 
-    h1.post-title {
+    &-title {
         color: $grey1;
         text-align: left;
         margin-bottom: 1.5rem;
     }
 
-    .post-meta {
+    &-meta {
         padding: 0;
         margin: 15px 0 0;
         color: #6E7173;
@@ -19,7 +19,7 @@
         }
     }
 
-    .post-content {
+    &-content {
         margin-top: 15px;
         line-height: 1.77;
         color: $grey0;
@@ -80,6 +80,15 @@
                     background: #f7f8f8;
                 }
             }
+        }
+    }
+
+    &-tags {
+        margin-top: 2rem;
+        font-family: $pingFang;
+
+        a {
+            margin-right: .5em;
         }
     }
 }

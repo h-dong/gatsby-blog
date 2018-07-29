@@ -5,6 +5,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     const { createPage } = boundActionCreators
     return new Promise((resolve, reject) => {
         const blogPostTemplate = path.resolve('src/templates/blog-post.js')
+        const tagsTemplate = path.resolve('src/templates/tags.js')
         resolve(
             graphql(`
                 {
@@ -42,7 +43,21 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                         context: {} // This is optional and defaults to an empty object if not used
                     });
 
+                    const tagPages = {};
+
                     result.data.allContentfulBlogPost.edges.forEach((edge) => {
+                        if (edge.node.tags) {
+                            edge.node.tags.forEach(tag => {
+                                if (!tagPages[tag]) tagPages[tag] = [];
+
+                                tagPages[tag].push({
+                                    title: edge.node.title,
+                                    slug: edge.node.slug,
+                                    publishDate: edge.node.publishDate
+                                });
+                            });
+                        }
+
                         createPage({
                             path: edge.node.slug,
                             component: blogPostTemplate,
@@ -50,8 +65,22 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                                 slug: edge.node.slug
                             }
                         })
-                    })
-                    return
+                    });
+
+                    for (const key in tagPages) {
+                        if (tagPages.hasOwnProperty(key)) {
+                            createPage({
+                                path: `tag/${key}`,
+                                component: tagsTemplate,
+                                context: {
+                                    name: key,
+                                    data: tagPages[key]
+                                }
+                            });
+                        }
+                    }
+
+                    return;
                 })
         )
     })

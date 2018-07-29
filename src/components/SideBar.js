@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import StarOutline from 'react-icons/lib/md/star-outline'
+import Tags from 'react-icons/lib/fa/tags'
 import File from 'react-icons/lib/fa/file-o'
 import FileText from 'react-icons/lib/fa/file-text-o'
 
@@ -25,7 +25,7 @@ const SideBar = ({ tags, articles }) => {
             </section>
             <section className="tags">
                 <h3 className="title">
-                    <StarOutline /> Tags
+                    <Tags /> Tags
                 </h3>
                 <div className="content">
                     {tagBadges}
