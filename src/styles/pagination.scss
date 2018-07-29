@@ -36,9 +36,15 @@ nav#pagination {
         &.next {
             float: right;
         }
+
+        span.desktop-only {
+            @media screen and (max-width: $tablet) {
+                display: none;
+            }
+        }
     }
 
-    span {
+    & > span {
         display: inline-block;
         height: 25px;
         line-height: 25px;

@@ -51,13 +51,17 @@
                 padding: 0 5px;
                 background: #f7f8f8;
             }
+
+            img {
+                width: 100%;
+            }
         }
 
         pre {
             background: #f7f8f8;
             margin: 10px 0;
             padding: 20px 15px;
-            overflow: hidden;
+            overflow: auto;
             line-height: 1.5em;
             color: #333;
         }

@@ -1,11 +1,17 @@
 footer {
-    padding: .8em 0 3.6em;
+    padding: .8rem 0 2rem;
     margin-top: 1em;
     line-height: 2.5;
     color: #6E7173;
     text-align: center;
     width: 75%;
     font-family: $pingFang;
+
+    @media screen and (max-width: $mobile) {
+        width: 100%;
+        line-height: 1.5;
+        padding: .8rem 0 1rem;
+    }
 
     a {
         color: #6E7173;
