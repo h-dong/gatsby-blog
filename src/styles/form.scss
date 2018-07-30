@@ -1,0 +1,9 @@
+a {
+    color: #6E7173;
+    text-decoration: none;
+    font-family: $pingFang;
+
+    &:hover {
+        color: $grey0;
+    }
+}

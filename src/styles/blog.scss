@@ -1,0 +1,94 @@
+.post {
+    padding-top: 25px;
+
+    &-title {
+        color: $grey1;
+        text-align: left;
+        margin-bottom: 1.5rem;
+    }
+
+    &-meta {
+        padding: 0;
+        margin: 15px 0 0;
+        color: #6E7173;
+        text-indent: .15em;
+        font-family: $pingFang;
+
+        svg {
+            margin-top: -2px;
+        }
+    }
+
+    &-content {
+        margin-top: 15px;
+        line-height: 1.77;
+        color: $grey0;
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: $pingFang;
+        }
+
+        h1 {
+            margin: .67em 0;
+        }
+
+        h2 {
+            margin: 1.4em 0 1.1em;
+            border-bottom: 1px solid #eee;
+            overflow: hidden;
+        }
+
+        h3 {
+            margin: 1.4em 0 0.5em;
+        }
+
+        p {
+            padding: 0;
+
+            code {
+                display: inline-block;
+                margin: 0 5px;
+                padding: 0 5px;
+                background: #f7f8f8;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+
+        pre {
+            background: #f7f8f8;
+            margin: 10px 0;
+            padding: 20px 15px;
+            overflow: auto;
+            line-height: 1.5em;
+            color: #333;
+        }
+
+        ul, ol {
+            font-size: 15px;
+            border-radius: 3px;
+            margin: 1em 0;
+            font-family: $pingFang;
+
+            li {
+                code {
+                    display: inline-block;
+                    margin: 0 5px;
+                    padding: 0 5px;
+                    background: #f7f8f8;
+                }
+            }
+        }
+    }
+
+    &-tags {
+        margin-top: 2rem;
+        font-family: $pingFang;
+
+        a {
+            margin-right: .5em;
+        }
+    }
+}

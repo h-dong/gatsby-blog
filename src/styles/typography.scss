@@ -1,0 +1,29 @@
+h1 {
+    margin: 0;
+    color: #555;
+    text-align: left;
+    font: bold 25px/1.1 "ff-tisa-web-pro", Cambria, "Times New Roman", Georgia, Times, sans-serif;
+}
+
+p {
+    clear: left;
+    font-size: 15px;
+    line-height: 1.77;
+    font-family: $pingFang;
+    color: #444;
+    padding-top: 15px;
+    hyphens: auto;
+    margin-top: 0;
+
+    a {
+        color: #01579f;
+        padding-bottom: 2px;
+        word-break: break-all;
+        text-decoration: none;
+
+        &:hover {
+            outline: 0;
+            text-decoration: underline;
+        }
+    }
+}
