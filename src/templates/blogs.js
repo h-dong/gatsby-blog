@@ -6,7 +6,7 @@ import Tag from 'react-icons/lib/fa/tag'
 import Pagination from '../components/pagination/Pagination'
 
 const BlogPost = ({ node }) => {
-    const tags = (node.tags) ? node.tags.map((tag, index) => <a key={index} href={`/tags/${tag}`}><Tag /> {tag}</a>) : null;
+    const tags = (node.tags) ? node.tags.map((tag, index) => <a key={index} href={`/tag/${tag}`}><Tag /> {tag}</a>) : null;
 
     return (
         <article className="card">
