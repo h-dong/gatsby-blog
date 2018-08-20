@@ -2,10 +2,11 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Calendar from 'react-icons/lib/fa/calendar'
 import Tag from 'react-icons/lib/fa/tag'
+import ReactDisqusThread from 'react-disqus-thread';
 
 class BlogPost extends Component {
     render() {
-        const { title, createdAt, tags, description, body } = this.props.data.contentfulBlogPost
+        const { id, title, createdAt, tags, description, body } = this.props.data.contentfulBlogPost
         const blogTags = (tags) ? tags.map((tag, index) => <a key={index} href={`/tags/${tag}`}><Tag /> {tag}</a>) : null;
 
         return (
@@ -17,6 +18,10 @@ class BlogPost extends Component {
                 <div dangerouslySetInnerHTML={{ __html: description.childMarkdownRemark.html }} />
                 <div className="post-content" dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.html }} />
                 <div className="post-tags">{blogTags}</div>
+                <ReactDisqusThread
+                    shortname="haodong-io"
+                    identifier={id}
+                    title={title}/>
             </div>
         )
     }
@@ -31,6 +36,7 @@ export default BlogPost
 export const pageQuery = graphql`
     query blogPostQuery($slug: String) {
         contentfulBlogPost(slug: {eq: $slug})  {
+            id
             title
             createdAt(formatString: "MMMM DD, YYYY")
             tags
