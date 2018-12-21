@@ -51,25 +51,21 @@
         p {
             padding: 0;
 
-            code {
-                display: inline-block;
-                margin: 0 5px;
-                padding: 0 5px;
-                background: #f7f8f8;
-            }
-
             img {
                 width: 100%;
             }
         }
 
         pre {
-            background: #f7f8f8;
-            margin: 10px 0;
-            padding: 20px 15px;
-            overflow: auto;
-            line-height: 1.5em;
-            color: #333;
+            border-left: 5px solid #06b6ef;
+        }
+
+        :not(pre) > code[class*="language-"] {
+            padding: .1em 0.5em;
+        }
+
+        :not(pre) > code[class*="language-"], pre[class*="language-"] {
+            color: #06b6ef;
         }
 
         ul, ol {
@@ -77,15 +73,6 @@
             border-radius: 3px;
             margin: 1em 0;
             font-family: $pingFang;
-
-            li {
-                code {
-                    display: inline-block;
-                    margin: 0 5px;
-                    padding: 0 5px;
-                    background: #f7f8f8;
-                }
-            }
         }
     }
 
