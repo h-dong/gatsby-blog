@@ -48,6 +48,13 @@
             padding-left: 1rem;
         }
 
+        ul, ol {
+            font-size: 15px;
+            border-radius: 3px;
+            margin: 1em 0;
+            font-family: $pingFang;
+        }
+
         p {
             padding: 0;
 
@@ -56,23 +63,62 @@
             }
         }
 
-        pre {
+        // pre {
+        //     border-left: 5px solid #06b6ef;
+        // }
+
+        :not(pre) {
+            & > code[class*="language-"] {
+                padding: .1em 0.5em;
+                color: #06b6ef;
+            }
+
+            & > pre[class*="language-"] {
+                color: #06b6ef;
+
+                &.line-numbers {
+                    padding-left: 2.8em;
+                }
+            }
+        }
+
+        /**
+        * Add back the container background-color, border-radius, padding, margin
+        * and overflow that we removed from <pre>.
+        */
+        .gatsby-highlight {
+            background-color: #2d2d2d;
+            border-radius: 0.3em;
+            margin: 0.5em 0;
+            padding: 1em;
+            overflow: auto;
             border-left: 5px solid #06b6ef;
-        }
 
-        :not(pre) > code[class*="language-"] {
-            padding: .1em 0.5em;
-        }
+            /**
+            * Remove the default PrismJS theme background-color, border-radius, margin,
+            * padding and overflow.
+            * 1. Make the element just wide enough to fit its content.
+            * 2. Always fill the visible space in .gatsby-highlight.
+            * 3. Adjust the position of the line numbers
+            */
+            pre[class*="language-"] {
+                background-color: transparent;
+                margin: 0;
+                padding: 0;
+                overflow: initial;
+                float: left;
+                min-width: calc(100% - 3em);
 
-        :not(pre) > code[class*="language-"], pre[class*="language-"] {
-            color: #06b6ef;
-        }
+                &.line-numbers {
+                    padding-left: 3em;
+                    padding-right: 1em;
 
-        ul, ol {
-            font-size: 15px;
-            border-radius: 3px;
-            margin: 1em 0;
-            font-family: $pingFang;
+                    .line-numbers-rows {
+                        right: calc(100% - 25px);
+                        left: unset !important;
+                    }
+                }
+            }
         }
     }
 

@@ -6,6 +6,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import SideBar from '../components/SideBar'
 import 'prismjs/themes/prism-tomorrow.css';
+import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
 import '../styles/index.scss'
 
 import icon from '../assets/icon.svg'

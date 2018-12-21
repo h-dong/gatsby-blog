@@ -102,8 +102,8 @@ module.exports = {
                             aliases: {
                                 js: 'javascript',
                             },
-                            showLineNumbers: false,
-                            noInlineHighlight: false,
+                            showLineNumbers: true,
+                            noInlineHighlight: true,
                         },
                     },
                 ],
