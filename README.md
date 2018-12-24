@@ -21,6 +21,16 @@ cd gatsby-example-site
 gatsby develop
 ```
 
+## Setting up Contentful
+
+Create a `.env` file on the root level, then add the variables below:
+
+```
+CONTENTFUL_ACCESS_TOKEN=xxxxxxxxxxx
+CONTENTFUL_SPACE_ID=xxxxx
+
+```
+
 ## Deploy
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
