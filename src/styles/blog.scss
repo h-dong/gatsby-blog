@@ -63,10 +63,6 @@
             }
         }
 
-        // pre {
-        //     border-left: 5px solid #06b6ef;
-        // }
-
         :not(pre) {
             & > code[class*="language-"] {
                 padding: .1em 0.5em;
@@ -92,7 +88,7 @@
             margin: 0.5em 0;
             padding: 1em;
             overflow: auto;
-            border-left: 5px solid #06b6ef;
+            border-left: 0.5em solid #FF9800;
 
             /**
             * Remove the default PrismJS theme background-color, border-radius, margin,
@@ -116,6 +112,15 @@
                     .line-numbers-rows {
                         right: calc(100% - 25px);
                         left: unset !important;
+                    }
+
+                    .gatsby-highlight-code-line {
+                        background-color: #455A64;
+                        display: block;
+                        margin-right: -1em;
+                        margin-left: -1em;
+                        padding-right: 1em;
+                        padding-left: 0.75em;
                     }
                 }
             }
