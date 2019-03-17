@@ -33,7 +33,7 @@ const Tags = ({ pathContext }) => {
 
     return (
         <div className="tags-container">
-            <h1>{name}</h1>
+            <h1>Tag: {name}</h1>
             <div className="tags-content">{years}</div>
         </div>
     );

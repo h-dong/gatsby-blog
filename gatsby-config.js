@@ -58,7 +58,7 @@ module.exports = {
                                         node {
                                             slug
                                             title
-                                            publishDate
+                                            publishDate(formatString: "Do MMM YYYY")
                                             updatedAt
                                             description {
                                                 childMarkdownRemark {
