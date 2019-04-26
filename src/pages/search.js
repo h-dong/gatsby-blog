@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from "../components/layout"
 import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch, SearchBox, Hits, connectHighlight } from 'react-instantsearch-dom';
+import { FaRegFileAlt } from 'react-icons/fa'
 
 const searchClient = algoliasearch('ZMVW6NRL6A', 'bae0d5d5589e65645917fe290105127b');
 
@@ -22,8 +23,8 @@ const CustomHighlight = connectHighlight(({ highlight, attribute, hit }) => {
 });
 
 const Hit = ({ hit }) => (
-    <h3>
-        <CustomHighlight attribute="title" hit={hit} />
+    <h3 className="hit">
+        <FaRegFileAlt /> <CustomHighlight attribute="title" hit={hit} />
     </h3>
 );
 
