@@ -8,8 +8,8 @@ const Header = ({ siteTitle }) => {
 
     const navLinks = [];
     const windowLocationPath = (typeof window !== 'undefined' && window) ? window.location.pathname : false;
-    const onSearchPage = (windowLocationPathwindow) ? LocationPath.indexOf(searchPath) > -1 : false;
-    const onAboutPage = (windowLocationPathwindow) ? windowLocationPath.indexOf(aboutPath) > -1 : false;
+    const onSearchPage = (windowLocationPath) ? windowLocationPath.indexOf(searchPath) > -1 : false;
+    const onAboutPage = (windowLocationPath) ? windowLocationPath.indexOf(aboutPath) > -1 : false;
 
     if (onAboutPage) {
         navLinks.push(<Link key="home" to="/" ><MdHome /> Home</Link>);
