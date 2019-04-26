@@ -1,14 +1,19 @@
 const path = require('path')
 const createPaginatedPages = require("gatsby-paginate");
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
-    const { createPage } = boundActionCreators
+exports.createPages = ({ graphql, actions }) => {
+    const { createPage } = actions
     return new Promise((resolve, reject) => {
         const blogPostTemplate = path.resolve('src/templates/blog-post.js')
         const tagsTemplate = path.resolve('src/templates/tags.js')
         resolve(
             graphql(`
                 {
+                    site {
+                        siteMetadata {
+                            title
+                        }
+                    }
                     allContentfulBlogPost(
                         sort: { fields: [publishDate], order: DESC }
                     ) {

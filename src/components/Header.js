@@ -1,38 +1,41 @@
 import React from 'react'
-import Link from 'gatsby-link'
-import Home from 'react-icons/lib/md/home';
-import Me from 'react-icons/lib/fa/user';
-import RSS from 'react-icons/lib/md/rss-feed';
+import { Link } from 'gatsby'
+import { MdHome, MdAccountCircle, MdRssFeed } from 'react-icons/md';
 
 const Header = ({ siteTitle }) => {
-  const aboutPath = '/about';
+    const searchPath = '/search';
+    const aboutPath = '/about';
 
-  const navLinks = [];
+    const navLinks = [];
+    const windowLocationPath = (typeof window !== 'undefined' && window) ? window.location.pathname : false;
+    const onSearchPage = windowLocationPath.indexOf(searchPath) > -1;
+    const onAboutPage = windowLocationPath.indexOf(aboutPath) > -1;
 
-  const windowLocationPath = (typeof window !== 'undefined' && window) ? window.location.pathname : false;
+    if (onAboutPage) {
+        navLinks.push(<Link key="home" to="/" ><MdHome /> Home</Link>);
+        // navLinks.push(<Link key="search" to={searchPath}><MdSearch /> Search</Link>);
+        navLinks.push(<Link key="about" to={aboutPath} className="current"><MdAccountCircle /> About Me</Link>);
+    } else if (onSearchPage) {
+        navLinks.push(<Link key="home" to="/" ><MdHome /> Home</Link>);
+        // navLinks.push(<Link key="search" to={searchPath} className="current"><MdSearch /> Search</Link>);
+        navLinks.push(<Link key="about" to={aboutPath}><MdAccountCircle /> About Me</Link>);
+    } else {
+        navLinks.push(<Link key="home" to="/" className="current"><MdHome /> Home</Link>);
+        // navLinks.push(<Link key="search" to={searchPath}><MdSearch /> Search</Link>);
+        navLinks.push(<Link key="about" to={aboutPath}><MdAccountCircle /> About Me</Link>);
+    }
 
-  if (windowLocationPath === aboutPath) {
-    navLinks.push(<Link key="home" to="/" ><Home /> Home</Link>);
-    navLinks.push(<Link key="about" to={aboutPath} className="current"><Me /> About Me</Link>);
-  } else if (windowLocationPath && windowLocationPath.indexOf('/tag') !== -1) {
-    navLinks.push(<Link key="home" to="/"><Home /> Home</Link>);
-    navLinks.push(<Link key="about" to={aboutPath} ><Me /> About Me</Link>);
-  } else {
-    navLinks.push(<Link key="home" to="/" className="current"><Home /> Home</Link>);
-    navLinks.push(<Link key="about" to={aboutPath} ><Me /> About Me</Link>);
-  }
-
-  return (
-    <header id="header">
-      <h1 style={{ display: 'none' }}></h1>
-      <Link to="/" className="link">{siteTitle}</Link>
-      <p>Development, UX, Programming Languages, Frameworks, Libraries, experiences and anything random.</p>
-      <nav-menu>
-        {navLinks}
-        <Link to="/rss.xml"><RSS /> RSS</Link>
-      </nav-menu>
-    </header>
-  );
+    return (
+        <header id="header">
+            <h1 style={{ display: 'none' }}>{siteTitle}</h1>
+            <Link to="/" className="link">{siteTitle}</Link>
+            <p>Development, UX, Programming Languages, Frameworks, Libraries, experiences and anything random.</p>
+            <nav-menu>
+                {navLinks}
+                <a href="/rss.xml"><MdRssFeed /> RSS</a>
+            </nav-menu>
+        </header>
+    );
 }
 
 export default Header

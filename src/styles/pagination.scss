@@ -37,6 +37,11 @@ nav#pagination {
             float: right;
         }
 
+        svg {
+            vertical-align: middle;
+            margin-top: -2px;
+        }
+
         span.desktop-only {
             @media screen and (max-width: $tablet) {
                 display: none;

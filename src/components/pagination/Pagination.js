@@ -1,7 +1,7 @@
 import React from 'react'
-import Link from "gatsby-link"
-import ChevronRight from 'react-icons/lib/fa/chevron-right'
-import ChevronLeft from 'react-icons/lib/fa/chevron-left'
+import { Link } from "gatsby"
+import { FaChevronRight } from 'react-icons/fa'
+import { FaChevronLeft } from 'react-icons/fa'
 
 const NavLink = props => {
     if (!props.test) {
@@ -12,7 +12,7 @@ const NavLink = props => {
 };
 
 const Pagination = ({ currentPage, pageCount, firstPage, lastPage }) => {
-    const previousUrl = currentPage - 1 == 1 ? '' : `/page/${currentPage - 1}`
+    const previousUrl = currentPage - 1 === 1 ? '' : `/page/${currentPage - 1}`
     const nextUrl = `/page/${currentPage + 1}`;
 
     const showPageButton = (index, current) => {
@@ -47,9 +47,9 @@ const Pagination = ({ currentPage, pageCount, firstPage, lastPage }) => {
 
     return (
         <nav id="pagination">
-            <NavLink className={`previous${(firstPage) ? ' hidden' : ''}`} test={firstPage} url={previousUrl}><ChevronLeft /> <span className="desktop-only">Last</span></NavLink>
+            <NavLink className={`previous${(firstPage) ? ' hidden' : ''}`} test={firstPage} url={previousUrl}><FaChevronLeft /> <span className="desktop-only">Last</span></NavLink>
             {pages}
-            <NavLink className={`next${(lastPage) ? ' hidden' : ''}`}test={lastPage} url={nextUrl}><span className="desktop-only">Next</span> <ChevronRight /></NavLink>
+            <NavLink className={`next${(lastPage) ? ' hidden' : ''}`}test={lastPage} url={nextUrl}><span className="desktop-only">Next</span> <FaChevronRight /></NavLink>
         </nav>
     );
 };

@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import { StaticQuery, graphql } from "gatsby"
 
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import SideBar from '../components/SideBar'
+import Header from './Header'
+import Footer from './Footer'
+import SideBar from './SideBar'
 import 'prismjs/themes/prism-tomorrow.css';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
 import '../styles/index.scss'
@@ -45,7 +46,7 @@ const Layout = ({ children, data }) => {
             <Header siteTitle={site.siteMetadata.title} />
             <main>
                 <section>
-                    {children()}
+                    {children}
                 </section>
                 <aside>
                     <SideBar tags={allTags} articles={recentArticles} />
@@ -60,25 +61,28 @@ Layout.propTypes = {
     children: PropTypes.func,
 }
 
-export default Layout
-
-export const query = graphql`
-    query SiteTitleQuery {
-        site {
-            siteMetadata {
-                title
-            }
-        }
-        allContentfulBlogPost(
-            sort: { fields: [publishDate], order: DESC }
-        ) {
-            edges {
-                node {
-                    slug
-                    title
-                    ...allTags
+export default ({ children }) => (
+    <StaticQuery
+        query={graphql`
+            {
+                site {
+                    siteMetadata {
+                        title
+                    }
+                }
+                allContentfulBlogPost(
+                    sort: { fields: [publishDate], order: DESC }
+                ) {
+                    edges {
+                        node {
+                            slug
+                            title
+                            ...allTags
+                        }
+                    }
                 }
             }
-        }
-    }
-`
+        `}
+        render={data => Layout({ children, data })}
+    />
+)

@@ -23,6 +23,7 @@
         margin-bottom: 15px;
 
         svg {
+            vertical-align: middle;
             margin-top: -2px;
         }
     }
@@ -68,8 +69,11 @@
             text-decoration: none;
             font-family: $pingFang;
 
-            span {
-                color: $grey0;
+            svg {
+                font-size: 1.2rem;
+                vertical-align: middle;
+                margin-top: -2px;
+                color: $grey1;
             }
         }
     }
@@ -78,10 +82,10 @@
         margin-bottom: 5px;
 
         a {
-            margin-right: 0.5rem;
+            margin-right: 0.8rem;
 
             svg {
-                margin-right: -2px;
+                vertical-align: middle;
             }
         }
     }

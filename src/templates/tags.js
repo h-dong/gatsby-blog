@@ -1,8 +1,7 @@
 import React from 'react'
-import Link from 'gatsby-link'
 
-const Tags = ({ pathContext }) => {
-    const { name, data } = pathContext;
+const Tags = ({ pageContext }) => {
+    const { name, data } = pageContext;
     let years = null;
 
     if (data.length) {
