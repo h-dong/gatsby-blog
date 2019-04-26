@@ -1,23 +1,22 @@
 import React from 'react'
-import Link from 'gatsby-link'
-import Tags from 'react-icons/lib/fa/tags'
-import File from 'react-icons/lib/fa/file-o'
-import FileText from 'react-icons/lib/fa/file-text-o'
+import { graphql, Link } from "gatsby"
+import { FaTags, FaRegFileAlt, FaFileAlt } from 'react-icons/fa'
+import { MdLabelOutline } from 'react-icons/md'
 
 const SideBar = ({ tags, articles }) => {
     const tagBadges = tags.map((tag, index) => (
-        <Link key={index} to={`/tag/${tag}`}>{tag}</Link>
+        <Link key={index} to={`/tag/${tag}`}><MdLabelOutline /> {tag}</Link>
     ));
 
     const articleBadges = articles.map((article, index) => (
-        <Link key={index} to={`/${article.slug}`}><File /> {article.title}</Link>
+        <Link key={index} to={`/${article.slug}`}><FaRegFileAlt /> {article.title}</Link>
     ));
 
     return (
         <div id="side-bar">
             <section className="articles">
                 <h3 className="title">
-                    <FileText /> Recent Articles
+                    <FaFileAlt /> Recent Articles
                 </h3>
                 <div className="content">
                     {articleBadges}
@@ -25,7 +24,7 @@ const SideBar = ({ tags, articles }) => {
             </section>
             <section className="tags">
                 <h3 className="title">
-                    <Tags /> Tags
+                    <FaTags /> Tags
                 </h3>
                 <div className="content">
                     {tagBadges}

@@ -7,7 +7,7 @@
     border-bottom: 1px solid $grey3;
     position: relative;
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: $tablet) {
         padding: 30px 0 0;
         text-align: center;
     }
@@ -18,7 +18,7 @@
         color: $grey1;
         text-decoration: none;
 
-        @media screen and (max-width: $mobile) {
+        @media screen and (max-width: $tablet) {
             font-size: 2rem;
         }
     }
@@ -26,9 +26,10 @@
     p {
         margin: 0;
         padding: 0;
-        color: $grey2;
+        color: $grey1;
+        margin: 0.5rem 0;
 
-        @media screen and (max-width: $mobile) {
+        @media screen and (max-width: $tablet) {
             line-height: 1.2;
             margin: 1rem 0;
         }
@@ -41,7 +42,7 @@
         right: 0;
         bottom: 0;
 
-        @media screen and (max-width: $mobile) {
+        @media screen and (max-width: $tablet) {
             position: relative;
         }
 
@@ -49,18 +50,18 @@
             display: inline-block;
             padding: 3px 20px 3px;
             line-height: 30px;
-            color: #444;
+            color: $grey0;
             font-size: 14px;
             border: 1px solid transparent;
             cursor: pointer;
             text-decoration: none;
 
-            @media screen and (max-width: $mobile) {
+            @media screen and (max-width: $tablet) {
                 padding: 3px 10px 3px;
             }
 
             &:hover {
-                border-bottom-color: #444;
+                border-bottom-color: $grey0;
             }
 
             &.current {
@@ -69,8 +70,10 @@
             }
 
             svg {
-                font-size: 1rem;
+                font-size: 1.2rem;
                 margin-top: -4px;
+                vertical-align: middle;
+                color: $grey1;
             }
         }
     }

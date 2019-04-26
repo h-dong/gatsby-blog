@@ -3,6 +3,11 @@ h1 {
     color: #555;
     text-align: left;
     font: bold 25px/1.1 "ff-tisa-web-pro", Cambria, "Times New Roman", Georgia, Times, sans-serif;
+
+    &.page-title {
+        margin-bottom: 1rem;
+        font-family: $pingFang;
+    }
 }
 
 p {

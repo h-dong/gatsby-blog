@@ -49,8 +49,7 @@
 
         console.log('Indexed Content:', indexedContent);
     } catch (err) {
-        console.log(Object.keys(err));
-        console.error(err.name, err.message);
+        console.error(err);
     }
 })();
 

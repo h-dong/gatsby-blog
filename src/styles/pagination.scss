@@ -1,4 +1,4 @@
-nav#pagination {
+#pagination {
     border-top: 1px solid #ddd;
     list-style: none;
     margin-top: 25px;
@@ -35,6 +35,11 @@ nav#pagination {
 
         &.next {
             float: right;
+        }
+
+        svg {
+            vertical-align: middle;
+            margin-top: -2px;
         }
 
         span.desktop-only {
