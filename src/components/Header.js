@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { MdHome, MdAccountCircle, MdRssFeed } from 'react-icons/md';
+import { MdHome, MdSearch, MdAccountCircle, MdRssFeed } from 'react-icons/md';
 
 const Header = ({ siteTitle }) => {
     const searchPath = '/search';
@@ -8,20 +8,20 @@ const Header = ({ siteTitle }) => {
 
     const navLinks = [];
     const windowLocationPath = (typeof window !== 'undefined' && window) ? window.location.pathname : false;
-    const onSearchPage = windowLocationPath.indexOf(searchPath) > -1;
-    const onAboutPage = windowLocationPath.indexOf(aboutPath) > -1;
+    const onSearchPage = (windowLocationPathwindow) ? LocationPath.indexOf(searchPath) > -1 : false;
+    const onAboutPage = (windowLocationPathwindow) ? windowLocationPath.indexOf(aboutPath) > -1 : false;
 
     if (onAboutPage) {
         navLinks.push(<Link key="home" to="/" ><MdHome /> Home</Link>);
-        // navLinks.push(<Link key="search" to={searchPath}><MdSearch /> Search</Link>);
+        navLinks.push(<Link key="search" to={searchPath}><MdSearch /> Search</Link>);
         navLinks.push(<Link key="about" to={aboutPath} className="current"><MdAccountCircle /> About Me</Link>);
     } else if (onSearchPage) {
         navLinks.push(<Link key="home" to="/" ><MdHome /> Home</Link>);
-        // navLinks.push(<Link key="search" to={searchPath} className="current"><MdSearch /> Search</Link>);
+        navLinks.push(<Link key="search" to={searchPath} className="current"><MdSearch /> Search</Link>);
         navLinks.push(<Link key="about" to={aboutPath}><MdAccountCircle /> About Me</Link>);
     } else {
         navLinks.push(<Link key="home" to="/" className="current"><MdHome /> Home</Link>);
-        // navLinks.push(<Link key="search" to={searchPath}><MdSearch /> Search</Link>);
+        navLinks.push(<Link key="search" to={searchPath}><MdSearch /> Search</Link>);
         navLinks.push(<Link key="about" to={aboutPath}><MdAccountCircle /> About Me</Link>);
     }
 
