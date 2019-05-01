@@ -5,14 +5,15 @@
     const { createClient } = require('contentful');
     const removeMd = require('remove-markdown');
     const removeSW = require('stopword');
-
+    const dotenv = require('dotenv').config()
 
     const {
         ALGOLIA_APP_ID,
         ALGOLIA_ADMIN_KEY,
         ALGOLIA_INDEX,
-        CTF_SPACE_ID,
+        CONTENTFUL_SPACE_ID,
         CONTENTFUL_ACCESS_TOKEN,
+        CONTENTFUL_HOST,
     } = process.env;
 
     const algoliaClient = algoliasearch(
@@ -22,8 +23,9 @@
     const algoliaIndex = algoliaClient.initIndex(ALGOLIA_INDEX);
 
     const ctfClient = createClient({
-        space: CTF_SPACE_ID,
-        accessToken: CONTENTFUL_ACCESS_TOKEN
+        space: CONTENTFUL_SPACE_ID,
+        accessToken: CONTENTFUL_ACCESS_TOKEN,
+        host: CONTENTFUL_HOST || 'cdn.contentful.com',
     });
 
     try {
