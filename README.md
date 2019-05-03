@@ -25,10 +25,21 @@ gatsby develop
 
 Create a `.env` file on the root level, then add the variables below:
 
+### For Production
+
 ```
 CONTENTFUL_ACCESS_TOKEN=xxxxxxxxxxx
 CONTENTFUL_SPACE_ID=xxxxx
+# CONTENTFUL_HOST= // comment out or remove, code defaults to production host
+```
 
+### For Preview
+
+
+```
+CONTENTFUL_ACCESS_TOKEN=xxxxxxxxxxx
+CONTENTFUL_SPACE_ID=xxxxx
+CONTENTFUL_HOST=preview.contentful.com
 ```
 
 ## Deploy
