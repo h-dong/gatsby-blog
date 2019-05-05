@@ -40,6 +40,7 @@
             const body = removeStopWords.join(' ');
 
             return {
+                slug: post.fields.slug,
                 title: post.fields.title,
                 description: post.fields.description,
                 body,

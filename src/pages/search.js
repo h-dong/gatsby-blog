@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import Layout from "../components/layout"
 import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch, SearchBox, Hits, connectHighlight } from 'react-instantsearch-dom';
@@ -23,9 +24,11 @@ const CustomHighlight = connectHighlight(({ highlight, attribute, hit }) => {
 });
 
 const Hit = ({ hit }) => (
-    <h3 className="hit">
-        <FaRegFileAlt /> <CustomHighlight attribute="title" hit={hit} />
-    </h3>
+    <Link to={`/${hit.slug}`}>
+        <h3 className="hit">
+            <FaRegFileAlt /> <CustomHighlight attribute="title" hit={hit} />
+        </h3>
+    </Link>
 );
 
 const SearchPage = () => (
