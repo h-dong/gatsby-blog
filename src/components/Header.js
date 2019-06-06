@@ -19,7 +19,7 @@ const Header = ({ siteTitle }) => {
             <nav-menu>
                 <Link to="/" className={onHomePage ? 'current' : null}><MdHome /> Home</Link>
                 <Link to={searchPath} className={onSearchPage ? 'current' : null}><MdSearch /> Search</Link>
-                <Link to={aboutPath} className={onAboutPage ? 'current' : null}><MdAccountCircle /> About Me</Link>
+                <Link to={aboutPath} className={onAboutPage ? 'current' : null}><MdAccountCircle /> About</Link>
                 <a href="/rss.xml"><MdRssFeed /> RSS</a>
             </nav-menu>
         </header>
