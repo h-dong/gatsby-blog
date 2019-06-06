@@ -19,7 +19,7 @@ const BlogPost = ({ node }) => {
             <div className="card-content" lang="en" dangerouslySetInnerHTML={{ __html: node.description.childMarkdownRemark.html }} />
             <div className="card-tags">{tags}</div>
             <div className="card-action">
-                <Link to={node.slug}>
+                <Link to={`/${node.slug}`}>
                     Read More <MdChevronRight />
                 </Link>
             </div>
