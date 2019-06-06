@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import Layout from "../components/layout"
 import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch, SearchBox, Hits, connectHighlight } from 'react-instantsearch-dom';
 import { FaRegFileAlt } from 'react-icons/fa'
+import Layout from "../components/layout"
+import algoliaIcon from '../assets/search-by-algolia-light-background.svg';
 
 const searchClient = algoliasearch('ZMVW6NRL6A', 'bae0d5d5589e65645917fe290105127b');
 
@@ -36,6 +37,9 @@ const SearchPage = () => (
         <div id="search" className="page">
             <InstantSearch searchClient={searchClient} indexName="prod_blog_search">
                 <SearchBox />
+                <div className="algolia-icon">
+                    <img src={algoliaIcon} alt="search by algolia icon" />
+                </div>
                 <Hits hitComponent={Hit} />
             </InstantSearch>
         </div>

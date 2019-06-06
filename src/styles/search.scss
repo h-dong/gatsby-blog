@@ -31,4 +31,10 @@
             }
         }
     }
+
+    .algolia-icon {
+        display: flex;
+        flex-direction: row-reverse;
+        margin-top: 0.5rem;
+    }
 }
