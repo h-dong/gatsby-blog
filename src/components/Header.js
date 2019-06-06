@@ -3,27 +3,13 @@ import { Link } from 'gatsby'
 import { MdHome, MdSearch, MdAccountCircle, MdRssFeed } from 'react-icons/md';
 
 const Header = ({ siteTitle }) => {
+    const homePath = '/';
     const searchPath = '/search';
     const aboutPath = '/about';
-
-    const navLinks = [];
     const windowLocationPath = (typeof window !== 'undefined' && window) ? window.location.pathname : false;
+    const onHomePage = (windowLocationPath) ? windowLocationPath === homePath : false;
     const onSearchPage = (windowLocationPath) ? windowLocationPath.indexOf(searchPath) > -1 : false;
     const onAboutPage = (windowLocationPath) ? windowLocationPath.indexOf(aboutPath) > -1 : false;
-
-    if (onAboutPage) {
-        navLinks.push(<Link key="home" to="/" ><MdHome /> Home</Link>);
-        navLinks.push(<Link key="search" to={searchPath}><MdSearch /> Search</Link>);
-        navLinks.push(<Link key="about" to={aboutPath} className="current"><MdAccountCircle /> About Me</Link>);
-    } else if (onSearchPage) {
-        navLinks.push(<Link key="home" to="/" ><MdHome /> Home</Link>);
-        navLinks.push(<Link key="search" to={searchPath} className="current"><MdSearch /> Search</Link>);
-        navLinks.push(<Link key="about" to={aboutPath}><MdAccountCircle /> About Me</Link>);
-    } else {
-        navLinks.push(<Link key="home" to="/" className="current"><MdHome /> Home</Link>);
-        navLinks.push(<Link key="search" to={searchPath}><MdSearch /> Search</Link>);
-        navLinks.push(<Link key="about" to={aboutPath}><MdAccountCircle /> About Me</Link>);
-    }
 
     return (
         <header id="header">
@@ -31,7 +17,9 @@ const Header = ({ siteTitle }) => {
             <Link to="/" className="link">{siteTitle}</Link>
             <p>Development, UX, Programming Languages, Frameworks, Libraries, experiences and anything random.</p>
             <nav-menu>
-                {navLinks}
+                <Link to="/" className={onHomePage ? 'current' : null}><MdHome /> Home</Link>
+                <Link to={searchPath} className={onSearchPage ? 'current' : null}><MdSearch /> Search</Link>
+                <Link to={aboutPath} className={onAboutPage ? 'current' : null}><MdAccountCircle /> About Me</Link>
                 <a href="/rss.xml"><MdRssFeed /> RSS</a>
             </nav-menu>
         </header>
