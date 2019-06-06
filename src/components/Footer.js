@@ -6,7 +6,9 @@ const Footer = () => {
     const year = new Date().getFullYear();
 
     return (
-        <footer>Copyright © {year} {blogLink}. Theme by {themeLink}.</footer>
+        <footer>
+            <span>Copyright © {year} {blogLink}. Theme by {themeLink}.</span>
+        </footer>
     );
 };
 
