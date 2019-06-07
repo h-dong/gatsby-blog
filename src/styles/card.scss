@@ -69,6 +69,10 @@
             text-decoration: none;
             font-family: $pingFang;
 
+            &:hover {
+                border: 1px solid $grey2;
+            }
+
             svg {
                 font-size: 1.2rem;
                 vertical-align: middle;
