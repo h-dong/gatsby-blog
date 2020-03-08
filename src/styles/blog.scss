@@ -1,6 +1,15 @@
 .post {
     padding-top: 25px;
 
+    &-hero {
+        margin-bottom: 1rem;
+
+        small {
+            font-family: $pingFang;
+            color: #6e7173;
+        }
+    }
+
     &-title {
         color: $grey1;
         font-family: $pingFang;
@@ -12,8 +21,8 @@
     &-meta {
         padding: 0;
         margin: 15px 0;
-        color: #6E7173;
-        text-indent: .15em;
+        color: #6e7173;
+        text-indent: 0.15em;
         font-family: $pingFang;
 
         div {
@@ -32,12 +41,17 @@
         line-height: 1.77;
         color: $grey0;
 
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: $pingFang;
         }
 
         h1 {
-            margin: .67em 0;
+            margin: 0.67em 0;
         }
 
         h2 {
@@ -56,7 +70,8 @@
             padding-left: 1rem;
         }
 
-        ul, ol {
+        ul,
+        ol {
             font-size: 15px;
             border-radius: 3px;
             margin: 1em 0;
@@ -110,7 +125,7 @@
             margin: 0.5em 0;
             padding: 1em;
             overflow: auto;
-            border-left: 0.5em solid #FF9800;
+            border-left: 0.5em solid #ff9800;
 
             /**
             * Remove the default PrismJS theme background-color, border-radius, margin,
@@ -137,7 +152,7 @@
                     }
 
                     .gatsby-highlight-code-line {
-                        background-color: #455A64;
+                        background-color: #455a64;
                         display: block;
                         margin-right: -1em;
                         margin-left: -1em;
