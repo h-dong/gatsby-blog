@@ -11,6 +11,10 @@
         "type": "git",
         "url": "https://github.com/hdong92/gatsby-blog"
     },
+    "engines": {
+        "node": ">=10",
+        "npm": ">=6"
+    },
     "scripts": {
         "build:old": "gatsby build",
         "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
