@@ -18,7 +18,7 @@ const CustomHighlight = connectHighlight(({ highlight, attribute, hit }) => {
     return (
         <div>
             {parsedHit.map(
-                part => (part.isHighlighted ? <mark>{part.value}</mark> : part.value)
+                (part, index) => (part.isHighlighted ? <mark key={index}>{part.value}</mark> : part.value)
             )}
         </div>
     );
