@@ -12,8 +12,8 @@
         "url": "https://github.com/hdong92/gatsby-blog"
     },
     "engines": {
-        "node": ">=10",
-        "npm": ">=6"
+        "node": ">=10.0.0",
+        "npm": ">=6.0.0"
     },
     "scripts": {
         "build:old": "gatsby build",
@@ -23,6 +23,7 @@
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "dependencies": {
+        "dart-sass": "^1.25.0",
         "disqus-react": "^1.0.8",
         "gatsby": "^2.22.17",
         "gatsby-image": "^2.4.6",
@@ -37,7 +38,6 @@
         "gatsby-remark-prismjs": "^3.5.3",
         "gatsby-source-contentful": "^2.3.14",
         "gatsby-transformer-remark": "^2.8.14",
-        "node-sass": "^4.14.1",
         "prismjs": "^1.20.0",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
