@@ -7,8 +7,8 @@ const SEO = ({ siteMetadata, title, description, pathname, image }) => {
         ""
     );
     const metaDescription = descriptionWithoutHTML || siteMetadata.description;
-    const metaImage = image?.src ? `${siteMetadata.siteUrl}${image.src}` : null;
-    const canonical = pathname ? `${siteMetadata.siteUrl}${pathname}` : null;
+    const metaImage = image?.resize?.src ? image.resize.src : null;
+    const canonical = pathname ? `${siteMetadata.siteUrl}/${pathname}` : null;
 
     return (
         <div>
