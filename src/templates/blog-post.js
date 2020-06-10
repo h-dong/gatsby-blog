@@ -48,7 +48,11 @@ export const pageQuery = graphql`
     query($slug: String) {
         site {
             siteMetadata {
-                title
+                title,
+                description,
+                keywords,
+                author,
+                siteUrl,
             }
         }
         contentfulBlogPost(slug: {eq: $slug})  {

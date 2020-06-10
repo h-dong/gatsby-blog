@@ -5,8 +5,10 @@ module.exports = {
         siteUrl: `https://haodong.io`,
         author: "Hao Dong",
         title: "Hao's learning log",
+        keywords:
+            "Coding, Software Development, UX, Programming Languages, Frameworks, Libraries, Finance, Productivity, Career, Personal Development",
         description:
-            "Development, UX, Programming Languages, Frameworks, Libraries, experiences and anything random.",
+            "Where I write about software development, productivity, career tips, personal development and more!",
     },
     plugins: [
         {
@@ -29,8 +31,9 @@ module.exports = {
                             siteMetadata {
                                 title
                                 description
+                                author,
+                                keywords,
                                 siteUrl
-                                site_url: siteUrl
                             }
                         }
                     }
