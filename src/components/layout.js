@@ -48,6 +48,14 @@ const Layout = ({ children, data }) => {
                         type: "image/svg",
                         href: `${icon}`,
                     },
+                    {
+                        rel: "preconnect",
+                        href: "https://stats.g.doubleclick.net",
+                    },
+                    {
+                        rel: "preconnect",
+                        href: "https://www.google-analytics.com",
+                    },
                 ]}
             />
             <Header siteTitle={siteMetadata.title} />
