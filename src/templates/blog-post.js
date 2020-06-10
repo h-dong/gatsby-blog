@@ -6,7 +6,7 @@ import { MdLabel } from 'react-icons/md'
 import Layout from '../components/layout'
 import { DiscussionEmbed } from 'disqus-react'
 import HeroImage from '../components/HeroImage'
-import SEO from '../components/seo'
+import SEO from '../components/SEO'
 
 class BlogPost extends Component {
     render() {
