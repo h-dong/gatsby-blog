@@ -47,9 +47,9 @@ const Pagination = ({ currentPage, pageCount, firstPage, lastPage }) => {
 
     return (
         <nav id="pagination">
-            <NavLink className={`previous${(firstPage) ? ' hidden' : ''}`} test={firstPage} url={previousUrl}><FaChevronLeft /> <span className="desktop-only">Last</span></NavLink>
+            <NavLink className={`previous${(firstPage) ? ' hidden' : ''}`} aria-label="Previous" test={firstPage} url={previousUrl}><FaChevronLeft /> <span className="desktop-only">Last</span></NavLink>
             {pages}
-            <NavLink className={`next${(lastPage) ? ' hidden' : ''}`}test={lastPage} url={nextUrl}><span className="desktop-only">Next</span> <FaChevronRight /></NavLink>
+            <NavLink className={`next${(lastPage) ? ' hidden' : ''}`} aria-label="Next" test={lastPage} url={nextUrl}><span className="desktop-only">Next</span> <FaChevronRight /></NavLink>
         </nav>
     );
 };

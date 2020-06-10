@@ -37,8 +37,16 @@ const SEO = ({ title, description, image, article = false }) => {
         url: `${siteUrl}/${pathname}`,
     };
 
+    const englishLang = {
+        lang: "en",
+    };
+
     return (
-        <Helmet title={title} titleTemplate={titleTemplate}>
+        <Helmet
+            htmlAttributes={englishLang}
+            title={title}
+            titleTemplate={titleTemplate}
+        >
             <meta name="description" content={seo.description} />
             <meta name="image" content={seo.image} />
 
