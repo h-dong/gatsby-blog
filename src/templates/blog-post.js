@@ -10,8 +10,7 @@ import SEO from '../components/SEO'
 
 class BlogPost extends Component {
     render() {
-        const { siteMetadata } = this.props.data.site;
-        const { id, title, publishDate, hero, tags, slug, description, body } = this.props.data.contentfulBlogPost
+        const { id, title, publishDate, hero, tags, description, body } = this.props.data.contentfulBlogPost
         const blogTags = (tags) ? tags.map((tag, index) => <a key={index} href={`/tags/${tag}`}><MdLabel /> {tag}</a>) : null;
 
         const readingStats = ReadingTime(`${description.childMarkdownRemark.html} ${body.childMarkdownRemark.html}`);
@@ -24,7 +23,7 @@ class BlogPost extends Component {
 
         return (
             <Layout>
-                <SEO siteMetadata={siteMetadata} title={title} description={description} image={hero} pathname={slug} />
+                <SEO title={title} description={description} image={hero} />
                 <div className="post">
                     <HeroImage hero={hero} />
                     <h1 className="post-title">{title}</h1>
@@ -46,15 +45,6 @@ export default BlogPost
 
 export const pageQuery = graphql`
     query($slug: String) {
-        site {
-            siteMetadata {
-                title
-                description
-                keywords
-                author
-                siteUrl
-            }
-        }
         contentfulBlogPost(slug: {eq: $slug})  {
             id
             title
@@ -66,7 +56,6 @@ export const pageQuery = graphql`
                 description
             }
             tags
-            slug
             description {
                 childMarkdownRemark {
                     html

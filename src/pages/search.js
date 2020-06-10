@@ -1,24 +1,37 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import algoliasearch from 'algoliasearch/lite';
-import { InstantSearch, SearchBox, Hits, connectHighlight } from 'react-instantsearch-dom';
-import { FaRegFileAlt } from 'react-icons/fa'
-import Layout from "../components/layout"
-import algoliaIcon from '../assets/search-by-algolia-light-background.svg';
+import React from "react";
+import { Link } from "gatsby";
+import algoliasearch from "algoliasearch/lite";
+import {
+    InstantSearch,
+    SearchBox,
+    Hits,
+    connectHighlight,
+} from "react-instantsearch-dom";
+import { FaRegFileAlt } from "react-icons/fa";
+import Layout from "../components/layout";
+import SEO from "../components/SEO";
+import algoliaIcon from "../assets/search-by-algolia-light-background.svg";
 
-const searchClient = algoliasearch('ZMVW6NRL6A', 'bae0d5d5589e65645917fe290105127b');
+const searchClient = algoliasearch(
+    "ZMVW6NRL6A",
+    "bae0d5d5589e65645917fe290105127b"
+);
 
 const CustomHighlight = connectHighlight(({ highlight, attribute, hit }) => {
     const parsedHit = highlight({
-        highlightProperty: '_highlightResult',
+        highlightProperty: "_highlightResult",
         attribute,
-        hit
+        hit,
     });
 
     return (
         <div>
-            {parsedHit.map(
-                (part, index) => (part.isHighlighted ? <mark key={index}>{part.value}</mark> : part.value)
+            {parsedHit.map((part, index) =>
+                part.isHighlighted ? (
+                    <mark key={index}>{part.value}</mark>
+                ) : (
+                    part.value
+                )
             )}
         </div>
     );
@@ -34,8 +47,12 @@ const Hit = ({ hit }) => (
 
 const SearchPage = () => (
     <Layout>
+        <SEO title={"Search"} />
         <div id="search" className="page">
-            <InstantSearch searchClient={searchClient} indexName="prod_blog_search">
+            <InstantSearch
+                searchClient={searchClient}
+                indexName="prod_blog_search"
+            >
                 <SearchBox />
                 <div className="algolia-icon">
                     <img src={algoliaIcon} alt="search by algolia icon" />
@@ -44,6 +61,6 @@ const SearchPage = () => (
             </InstantSearch>
         </div>
     </Layout>
-)
+);
 
-export default SearchPage
+export default SearchPage;
