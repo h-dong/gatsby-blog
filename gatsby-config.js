@@ -2,11 +2,15 @@ require("dotenv").config();
 
 module.exports = {
     siteMetadata: {
-        siteUrl: `https://haodong.io`,
+        url: "https://haodong.io",
         author: "Hao Dong",
         title: "Hao's learning log",
+        titleTemplate: "%s · Hao's learning log",
+        keywords:
+            "Coding, Software Development, UX, Programming Languages, Frameworks, Libraries, Finance, Productivity, Career, Personal Development",
         description:
-            "Development, UX, Programming Languages, Frameworks, Libraries, experiences and anything random.",
+            "I write about software development, productivity, career tips, personal development and more!",
+        twitterUsername: "@_hdong",
     },
     plugins: [
         {
@@ -29,8 +33,9 @@ module.exports = {
                             siteMetadata {
                                 title
                                 description
-                                siteUrl
-                                site_url: siteUrl
+                                author,
+                                keywords,
+                                url
                             }
                         }
                     }
@@ -45,8 +50,8 @@ module.exports = {
 
                                 return {
                                     title: edge.node.title,
-                                    url: `${site.siteMetadata.siteUrl}/${edge.node.slug}`,
-                                    guid: `${site.siteMetadata.siteUrl}/${edge.node.slug}`,
+                                    url: `${site.siteMetadata.url}/${edge.node.slug}`,
+                                    guid: `${site.siteMetadata.url}/${edge.node.slug}`,
                                     description:
                                         edge.node.description
                                             .childMarkdownRemark.html,
