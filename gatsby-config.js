@@ -22,9 +22,6 @@ module.exports = {
             },
         },
         {
-            resolve: `gatsby-plugin-sitemap`,
-        },
-        {
             resolve: `gatsby-plugin-feed`,
             options: {
                 query: `
