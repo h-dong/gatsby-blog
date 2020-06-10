@@ -11,7 +11,7 @@ const SEO = ({ siteMetadata, title, description, pathname, image }) => {
         ""
     );
     const metaDescription = descriptionWithoutHTML || siteMetadata.description;
-    const metaImage = null;
+    let metaImage = null;
     if (image?.resize?.src) {
         metaImage = image.resize.src;
         // Replace the width and height e.g. ?w=700&h=400&fl=progressive&q=50&fit=fill"
