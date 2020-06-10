@@ -12,6 +12,10 @@ exports.createPages = ({ graphql, actions }) => {
                     site {
                         siteMetadata {
                             title
+                            description
+                            keywords
+                            author
+                            siteUrl
                         }
                     }
                     allContentfulBlogPost(
@@ -45,7 +49,9 @@ exports.createPages = ({ graphql, actions }) => {
                     pageLength: 10, // This is optional and defaults to 10 if not used
                     pathPrefix: "page",
                     buildPath: (index, pathPrefix) => index > 1 ? `${pathPrefix}/${index}` : `/`,
-                    context: {} // This is optional and defaults to an empty object if not used
+                    context: {
+                        siteMetadata: result.data.site.siteMetadata,
+                    } // This is optional and defaults to an empty object if not used
                 });
 
                 const tagPages = {};

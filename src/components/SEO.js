@@ -1,17 +1,19 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import SocialLogo from "../assets/social_logo.png";
 
 // The recommended image ratio for an og:image is 1.91:1
 const imageWidth = "1200";
 const imageHeight = "630";
 
 const SEO = ({ siteMetadata, title, description, pathname, image }) => {
-    const descriptionWithoutHTML = description.childMarkdownRemark.html.replace(
-        /<\/?[^>]+(>|$)/g,
-        ""
-    );
-    const metaDescription = descriptionWithoutHTML || siteMetadata.description;
-    let metaImage = null;
+    const metaTitle = title
+        ? `${title} | ${siteMetadata.title}`
+        : siteMetadata.title;
+    const metaDescription = description
+        ? description.childMarkdownRemark.html.replace(/<\/?[^>]+(>|$)/g, "")
+        : siteMetadata.description;
+    let metaImage = SocialLogo;
     if (image?.resize?.src) {
         metaImage = image.resize.src;
         // Replace the width and height e.g. ?w=700&h=400&fl=progressive&q=50&fit=fill"
@@ -22,8 +24,7 @@ const SEO = ({ siteMetadata, title, description, pathname, image }) => {
 
     return (
         <Helmet
-            title={title}
-            titleTemplate={`%s | ${siteMetadata.title}`}
+            title={metaTitle}
             link={
                 canonical
                     ? [

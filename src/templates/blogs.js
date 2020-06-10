@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import { MdChevronRight, MdLabel }  from 'react-icons/md'
 import { FaCalendarAlt } from 'react-icons/fa'
 import Layout from "../components/layout"
+import SEO from "../components/SEO"
 import Pagination from '../components/pagination/Pagination'
 
 const BlogPost = ({ node }) => {
@@ -28,10 +29,11 @@ const BlogPost = ({ node }) => {
 }
 
 const Blogs = ({ pageContext }) => {
-    const { group, index, first, last, pageCount } = pageContext;
+    const { siteMetadata, group, index, first, last, pageCount } = pageContext;
 
     return (
         <Layout>
+            <SEO siteMetadata={siteMetadata} pathname={'/'} />
             <div className="cards">
                 {group.map((edge) => <BlogPost key={edge.node.id} node={edge.node} />)}
                 <Pagination currentPage={index} pageCount={pageCount} firstPage={first} lastPage={last} />
