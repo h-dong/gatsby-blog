@@ -7,7 +7,7 @@ module.exports = {
         title: "Hao's learning log",
         titleTemplate: "%s · Hao's learning log",
         keywords:
-            "Coding, Software Development, UX, Programming Languages, Frameworks, Libraries, Finance, Productivity, Career, Personal Development",
+            "Coding, Software Development, UX, Programming Languages, Frameworks, Libraries, Finance, Productivity, Career tips, Personal Development",
         description:
             "I write about software development, productivity, career tips, personal development and more!",
         twitterUsername: "@_hdong",

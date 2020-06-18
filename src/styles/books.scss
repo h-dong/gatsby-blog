@@ -1,0 +1,24 @@
+h2 {
+    font-family: $pingFang;
+}
+
+.bookmark {
+    display: flex;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+
+    &:hover {
+        border: 1px solid $grey3;
+    }
+
+    img {
+        height: 240px;
+        width: 150px;
+        margin-right: 1rem;
+    }
+
+    h3 {
+        margin-top: 0;
+    }
+}
