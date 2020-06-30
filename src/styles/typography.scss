@@ -2,7 +2,8 @@ h1 {
     margin: 0;
     color: #555;
     text-align: left;
-    font: bold 25px/1.1 "ff-tisa-web-pro", Cambria, "Times New Roman", Georgia, Times, sans-serif;
+    font: bold 25px/1.1 "ff-tisa-web-pro", Cambria, "Times New Roman", Georgia,
+        Times, sans-serif;
 
     &.page-title {
         margin-bottom: 1rem;
@@ -12,7 +13,7 @@ h1 {
 
 p {
     clear: left;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.77;
     margin-bottom: 0.9rem;
     font-family: $pingFang;
