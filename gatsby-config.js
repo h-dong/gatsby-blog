@@ -97,7 +97,6 @@ module.exports = {
             },
         },
         "gatsby-plugin-react-helmet",
-        "gatsby-transformer-remark",
         {
             resolve: `gatsby-plugin-sass`,
             options: {
@@ -119,6 +118,13 @@ module.exports = {
                             },
                             showLineNumbers: false,
                             noInlineHighlight: false,
+                        },
+                    },
+                    {
+                        resolve: "gatsby-remark-component-parent2div",
+                        options: {
+                            components: ["book-affiliate-link"],
+                            verbose: true,
                         },
                     },
                 ],

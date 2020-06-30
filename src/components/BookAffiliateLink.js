@@ -20,21 +20,21 @@ const BookTitle = ({ title, subtitle }) => {
     );
 };
 
-const Bookmark = ({ imgsrc, title, subtitle, description, link }) => {
+const BookAffiliateLink = ({ imgsrc, title, subtitle, author, link }) => {
     return (
         <a
-            className="bookmark"
+            className="book-affiliate-link"
             href={link}
             rel="noopener noreferrer nofollow"
             target="_blank"
         >
             <Image imgsrc={imgsrc} title={title} />
-            <div>
+            <div className="content">
                 <BookTitle title={title} subtitle={subtitle} />
-                <p>{description}</p>
+                <p>By {author}</p>
             </div>
         </a>
     );
 };
 
-export default Bookmark;
+export default BookAffiliateLink;

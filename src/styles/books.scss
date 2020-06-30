@@ -22,3 +22,33 @@ h2 {
         margin-top: 0;
     }
 }
+
+.book-affiliate-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    color: $grey0;
+
+    &:hover {
+        text-decoration: none;
+        border: 1px solid $grey3;
+    }
+
+    img {
+        height: 240px;
+        width: 150px;
+        margin-right: 1rem;
+    }
+
+    .content {
+        width: 250px;
+
+        h2 {
+            border-bottom: none;
+            margin-top: 0;
+        }
+    }
+}
