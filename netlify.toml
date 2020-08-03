@@ -11,3 +11,5 @@ package = "@netlify/plugin-sitemap"
 
 [[plugins]]
 package = "netlify-plugin-search-index"
+  [plugins.inputs]
+  exclude = ["/\/tag\//"]
