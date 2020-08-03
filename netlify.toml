@@ -12,4 +12,4 @@ package = "@netlify/plugin-sitemap"
 [[plugins]]
 package = "netlify-plugin-search-index"
   [plugins.inputs]
-  exclude = ['''\/tag\/''', '''/^\/tag\/.*/''']
+  exclude = ['''\/tag\/''', '''\/page\/''', "404/index.html", "/404.html", "/about/index.html", "/books/index.html", "/projects/index.html", "/search/index.html"]
