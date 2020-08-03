@@ -10,7 +10,6 @@ package = "@netlify/plugin-sitemap"
   buildDir = "public"
 
 [[plugins]]
-package = "netlify-plugin-search-index"
+package = "netlify-plugin-algolia-index"
   [plugins.inputs]
   exclude = ['''/^\/tag\/.*/''']
-  debugMode = true
