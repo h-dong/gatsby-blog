@@ -1,10 +1,14 @@
-@import 'colours';
-@import 'fonts';
+@import "colours";
+@import "fonts";
 
 #header {
     padding: 30px 0 0;
     text-align: center;
     border-bottom: 1px solid $grey3;
+
+    @media screen and (max-width: $tablet) {
+        padding: 1rem 0 0;
+    }
 
     .link {
         font-size: 2.375rem;
@@ -29,40 +33,89 @@
         }
     }
 
-    nav-menu {
-        margin: 20px 0 -1px;
+    nav {
         padding: 0;
         display: flex;
-        justify-content: space-evenly;
 
-        a {
-            display: inline-block;
-            padding: 3px 20px 3px;
-            line-height: 30px;
-            color: $grey0;
-            font-size: 14px;
-            border: 1px solid transparent;
-            cursor: pointer;
-            text-decoration: none;
+        &.mobile {
+            margin-bottom: 0.5rem;
+            justify-content: flex-end;
+
+            @media screen and (min-width: $tablet) {
+                display: none;
+            }
+
+            button {
+                display: flex;
+                font-size: 2rem;
+                background: none;
+                border: none;
+                cursor: pointer;
+                color: $grey1;
+            }
+        }
+
+        &.desktop {
+            margin: 20px 0 -1px;
+            justify-content: space-evenly;
 
             @media screen and (max-width: $tablet) {
-                padding: 3px 10px 3px;
+                display: none;
             }
 
-            &:hover {
-                border-bottom-color: $grey0;
-            }
+            a {
+                display: inline-block;
+                padding: 3px 20px 3px;
+                line-height: 30px;
+                color: $grey0;
+                font-size: 14px;
+                border: 1px solid transparent;
+                cursor: pointer;
+                text-decoration: none;
 
-            &.active {
-                border: 1px solid #ddd;
-                border-bottom-color: #fff;
+                @media screen and (max-width: $tablet) {
+                    padding: 3px 10px 3px;
+                }
+
+                &:hover {
+                    border-bottom-color: $grey0;
+                }
+
+                &.active {
+                    border: 1px solid #ddd;
+                    border-bottom-color: #fff;
+                }
+
+                svg {
+                    font-size: 1.2rem;
+                    margin-top: -4px;
+                    vertical-align: middle;
+                    color: $grey1;
+                }
             }
+        }
+    }
+
+    .overlay {
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        padding-top: 10vh;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.9);
+
+        a {
+            color: $grey3;
+            font-size: 1.25rem;
+            padding: 0.5rem 0;
 
             svg {
-                font-size: 1.2rem;
                 margin-top: -4px;
                 vertical-align: middle;
-                color: $grey1;
             }
         }
     }

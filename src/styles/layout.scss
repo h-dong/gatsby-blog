@@ -1,4 +1,4 @@
-@import 'media';
+@import "media";
 
 .body-container {
     display: flex;
@@ -10,7 +10,11 @@
     box-sizing: border-box;
     text-rendering: optimizespeed;
 
-    @media screen and (max-width: $mobile) {
+    &[data-noscroll="true"] {
+        overflow: hidden;
+    }
+
+    @media screen and (max-width: $tablet) {
         padding: 0 20px;
     }
 
@@ -42,5 +46,4 @@
             }
         }
     }
-
 }
