@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
 import {
     MdHome,
@@ -33,24 +33,36 @@ const navLinks = (
         </a>
     </>
 );
-const originalStyle = window.getComputedStyle(document.body).overflow;
+const originalStyle =
+    typeof window !== `undefined` &&
+    window.getComputedStyle(document.body).overflow;
 
 const Header = ({ siteTitle }) => {
     const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
-    const toggleOverlay = (value) => {
-        if (document.body.style.overflow !== "hidden") {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = originalStyle;
-        }
-        setMobileNavOpen(value);
-    };
+    useEffect(() => {
+        document.body.style.overflow = "hidden";
+    }, [mobileNavOpen]);
+
+    useEffect(() => {
+        document.body.style.overflow = originalStyle;
+    }, [!mobileNavOpen]);
+
+    // const toggleOverlay = (value) => {
+    //     if (document) {
+    //         if (document.body.style.overflow !== "hidden") {
+    //             document.body.style.overflow = "hidden";
+    //         } else {
+    //             document.body.style.overflow = originalStyle;
+    //         }
+    //     }
+    //     setMobileNavOpen(value);
+    // };
 
     return (
         <header id="header">
             <nav className="mobile">
-                <button type="button" onClick={() => toggleOverlay(true)}>
+                <button type="button" onClick={() => setMobileNavOpen(true)}>
                     <MdMenu />
                 </button>
             </nav>
@@ -59,8 +71,8 @@ const Header = ({ siteTitle }) => {
                     className="overlay"
                     role="button"
                     tabIndex={0}
-                    onKeyDown={() => toggleOverlay(false)}
-                    onClick={() => toggleOverlay(false)}
+                    onKeyDown={() => setMobileNavOpen(false)}
+                    onClick={() => setMobileNavOpen(false)}
                 >
                     {navLinks}
                 </div>
