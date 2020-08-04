@@ -16,10 +16,10 @@
     }
 
     &-meta {
-        color: #6E7173;
+        color: #6e7173;
         font-family: $pingFang;
         display: inline-block;
-        text-indent: .15em;
+        text-indent: 0.15em;
         margin-bottom: 15px;
 
         svg {
@@ -32,7 +32,8 @@
         line-height: 1.77;
         color: $grey0;
 
-        ul, ol {
+        ul,
+        ol {
             font-size: 15px;
             border-radius: 3px;
             margin: 1em 0;
@@ -83,7 +84,7 @@
     }
 
     &-tags {
-        margin-bottom: 5px;
+        margin-bottom: 15px;
 
         a {
             margin-right: 0.8rem;
