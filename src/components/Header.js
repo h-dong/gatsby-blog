@@ -37,7 +37,7 @@ const originalStyle =
     typeof window !== `undefined` &&
     window.getComputedStyle(document.body).overflow;
 
-const Header = ({ siteTitle }) => {
+const Header = ({ siteTitle, keywords }) => {
     const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
     useEffect(() => {
@@ -47,17 +47,6 @@ const Header = ({ siteTitle }) => {
     useEffect(() => {
         document.body.style.overflow = originalStyle;
     }, [!mobileNavOpen]);
-
-    // const toggleOverlay = (value) => {
-    //     if (document) {
-    //         if (document.body.style.overflow !== "hidden") {
-    //             document.body.style.overflow = "hidden";
-    //         } else {
-    //             document.body.style.overflow = originalStyle;
-    //         }
-    //     }
-    //     setMobileNavOpen(value);
-    // };
 
     return (
         <header id="header">
@@ -81,11 +70,7 @@ const Header = ({ siteTitle }) => {
             <Link to="/" className="link">
                 {siteTitle}
             </Link>
-            <p>
-                Coding, Software Development, UX, Programming Languages,
-                Frameworks, Libraries, Finance, Productivity, Career tips,
-                Personal Development
-            </p>
+            <p>{keywords}</p>
             <nav className="desktop">{navLinks}</nav>
         </header>
     );
