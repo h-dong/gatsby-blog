@@ -58,7 +58,10 @@ const Layout = ({ children, data }) => {
                     },
                 ]}
             />
-            <Header siteTitle={siteMetadata.title} />
+            <Header
+                keywords={siteMetadata.keywords}
+                siteTitle={siteMetadata.title}
+            />
             <main>
                 <section>{children}</section>
                 <aside>
