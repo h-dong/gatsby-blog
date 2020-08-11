@@ -127,6 +127,13 @@ module.exports = {
                             verbose: true,
                         },
                     },
+                    {
+                        resolve: "gatsby-remark-external-links",
+                        options: {
+                            target: "_blank",
+                            rel: "nofollow noopener noreferrer",
+                        },
+                    },
                 ],
             },
         },

@@ -35,6 +35,7 @@
         "gatsby-plugin-remove-trailing-slashes": "^2.3.4",
         "gatsby-plugin-sass": "^2.3.3",
         "gatsby-remark-component-parent2div": "^1.2.3",
+        "gatsby-remark-external-links": "0.0.4",
         "gatsby-remark-prismjs": "^3.5.3",
         "gatsby-source-contentful": "^2.3.14",
         "gatsby-transformer-remark": "^2.8.14",
