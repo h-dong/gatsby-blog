@@ -51,7 +51,7 @@ const SearchPage = () => (
         <div id="search" className="page">
             <InstantSearch
                 searchClient={searchClient}
-                indexName="prod_blog_search"
+                indexName="blog_hao_dev_search"
             >
                 <SearchBox />
                 <div className="algolia-icon">

@@ -8,8 +8,3 @@ package = "netlify-plugin-gatsby-cache"
 package = "@netlify/plugin-sitemap"
   [plugins.inputs]
   buildDir = "public"
-
-[[plugins]]
-package = "netlify-plugin-search-index"
-  [plugins.inputs]
-  exclude = ['''\/tag\/''', '''\/page\/''', "404/index.html", "/404.html", "/about/index.html", "/books/index.html", "/projects/index.html", "/search/index.html"]
