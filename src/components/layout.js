@@ -10,7 +10,7 @@ import "prismjs/themes/prism-tomorrow.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 import "../styles/index.scss";
 
-import icon from "../assets/icon.svg";
+import icon from "../assets/icon_light.svg";
 
 const Layout = ({ children, data }) => {
     const { siteMetadata } = data.site;

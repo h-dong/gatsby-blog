@@ -9,6 +9,8 @@ import {
     MdMenu,
 } from "react-icons/md";
 
+import icon from "../assets/icon_light.svg";
+
 const homePath = "/";
 const searchPath = "/search";
 const booksPath = "/books";
@@ -66,9 +68,10 @@ const Header = ({ siteTitle, keywords }) => {
                     {navLinks}
                 </div>
             )}
+
             <h1 style={{ display: "none" }}>{siteTitle}</h1>
-            <Link to="/" className="link">
-                {siteTitle}
+            <Link to="/" className="link site-heading">
+                <img className="logo" src={icon} alt="logo" /> {siteTitle}
             </Link>
             <p>{keywords}</p>
             <nav className="desktop">{navLinks}</nav>
