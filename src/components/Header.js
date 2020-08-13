@@ -25,11 +25,11 @@ const navLinks = (
         <Link to={searchPath} activeClassName="active">
             <MdSearch /> Search
         </Link>
-        <Link to={aboutPath} activeClassName="active">
-            <MdAccountCircle /> About
-        </Link>
         <Link to={booksPath} activeClassName="active">
             <MdBook /> Book Recommendations
+        </Link>
+        <Link to={aboutPath} activeClassName="active">
+            <MdAccountCircle /> About
         </Link>
         <a href="/rss.xml">
             <MdRssFeed /> RSS
