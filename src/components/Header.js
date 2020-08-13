@@ -10,6 +10,7 @@ import {
 } from "react-icons/md";
 
 import icon from "../assets/icon_light.svg";
+import iconDark from "../assets/icon_dark.svg";
 
 const homePath = "/";
 const searchPath = "/search";
@@ -53,6 +54,7 @@ const Header = ({ siteTitle, keywords }) => {
     return (
         <header id="header">
             <nav className="mobile">
+                <img className="logo" src={iconDark} alt="logo" />
                 <button type="button" onClick={() => setMobileNavOpen(true)}>
                     <MdMenu />
                 </button>
