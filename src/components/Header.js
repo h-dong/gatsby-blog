@@ -29,7 +29,7 @@ const navLinks = (
             <MdAccountCircle /> About
         </Link>
         <Link to={booksPath} activeClassName="active">
-            <MdBook /> Books for life
+            <MdBook /> Book Recommendations
         </Link>
         <a href="/rss.xml">
             <MdRssFeed /> RSS

@@ -171,9 +171,9 @@ const listBooks = () =>
 
 const RecommendedBooks = () => (
     <Layout>
-        <SEO title={"Books for life"} />
+        <SEO title={"Book Recommendations"} />
         <div className="page books">
-            <h1 className="page-title">Books for life</h1>
+            <h1 className="page-title">Book Recommendations</h1>
             <p>
                 These are the best books that I discovered since graduating from
                 university. I try to keep this list meaning and manageable, so
