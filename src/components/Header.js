@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "gatsby";
 import {
     MdHome,
@@ -43,19 +43,23 @@ const originalStyle =
 const Header = ({ siteTitle, keywords }) => {
     const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
-    useEffect(() => {
-        document.body.style.overflow = "hidden";
-    }, [mobileNavOpen]);
-
-    useEffect(() => {
-        document.body.style.overflow = originalStyle;
-    }, [!mobileNavOpen]);
+    function handleMobileNavChange(value) {
+        if (value) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = originalStyle;
+        }
+        setMobileNavOpen(value);
+    }
 
     return (
         <header id="header">
             <nav className="mobile">
                 <img className="logo" src={iconDark} alt="logo" />
-                <button type="button" onClick={() => setMobileNavOpen(true)}>
+                <button
+                    type="button"
+                    onClick={() => handleMobileNavChange(true)}
+                >
                     <MdMenu />
                 </button>
             </nav>
@@ -64,8 +68,8 @@ const Header = ({ siteTitle, keywords }) => {
                     className="overlay"
                     role="button"
                     tabIndex={0}
-                    onKeyDown={() => setMobileNavOpen(false)}
-                    onClick={() => setMobileNavOpen(false)}
+                    onKeyDown={() => handleMobileNavChange(false)}
+                    onClick={() => handleMobileNavChange(false)}
                 >
                     {navLinks}
                 </div>
