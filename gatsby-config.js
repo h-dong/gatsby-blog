@@ -93,7 +93,7 @@ module.exports = {
                 background_color: "#fff",
                 theme_color: "#555",
                 display: "minimal-ui",
-                icon: "src/assets/icon.svg", // This path is relative to the root of the site.
+                icon: "src/assets/icon_light.svg", // This path is relative to the root of the site.
             },
         },
         "gatsby-plugin-react-helmet",
