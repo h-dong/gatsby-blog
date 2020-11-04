@@ -12,7 +12,7 @@ package = "@netlify/plugin-sitemap"
 [[plugins]]
 package = "netlify-plugin-rss"
   [plugins.inputs]
-  dirToScan = "public"
+  dirToScan = "/"
   authorName = "Hao Dong"
   site_url = "https://haodong.io"
   title = "Hao Dong RSS Feed"
