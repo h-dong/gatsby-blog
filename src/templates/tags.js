@@ -1,4 +1,6 @@
-import React from 'react'
+import React from "react";
+import SEO from "../components/SEO";
+import Layout from "../components/layout";
 
 const Tags = ({ pageContext }) => {
     const { name, data } = pageContext;
@@ -7,11 +9,13 @@ const Tags = ({ pageContext }) => {
     if (data.length) {
         years = [];
 
-        const uniqueYears = data.map(elem => elem.publishDate.slice(-4))
+        const uniqueYears = data
+            .map((elem) => elem.publishDate.slice(-4))
             .filter((value, index, self) => self.indexOf(value) === index);
 
         uniqueYears.forEach((uniqueYear, index) => {
-            const listItems = data.filter(record => uniqueYear === record.publishDate.slice(-4))
+            const listItems = data
+                .filter((record) => uniqueYear === record.publishDate.slice(-4))
                 .map((record, index) => (
                     <li key={index}>
                         <span>{record.publishDate}</span>
@@ -31,11 +35,14 @@ const Tags = ({ pageContext }) => {
     }
 
     return (
-        <div className="tags-container">
-            <h1>Tag: {name}</h1>
-            <div className="tags-content">{years}</div>
-        </div>
+        <Layout>
+            <SEO title={`Tags · ${name}`} />
+            <div className="tags-container">
+                <h1>Tag: {name}</h1>
+                <div className="tags-content">{years}</div>
+            </div>
+        </Layout>
     );
-}
+};
 
 export default Tags;
