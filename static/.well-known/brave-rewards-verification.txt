@@ -1,4 +1,4 @@
 This is a Brave Rewards publisher verification file.
 
-Domain: haodong.io
-Token: 8eb76d0b984af0ea8431bf41161982100d90e62aa1e7d0768ee31ffd7a6c39b5
+Domain: hao.dev
+Token: 48d7efff0fceb1e819086d81bdc502b85046c2f2a884a4c497f2bcefb851ae8e

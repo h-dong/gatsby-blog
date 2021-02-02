@@ -9,7 +9,7 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/hdong92/gatsby-blog"
+        "url": "https://github.com/h-dong/gatsby-blog"
     },
     "engines": {
         "node": ">=10.0.0",

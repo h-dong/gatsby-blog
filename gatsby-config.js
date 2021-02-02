@@ -2,7 +2,7 @@ require("dotenv").config();
 
 module.exports = {
     siteMetadata: {
-        url: "https://haodong.io",
+        url: "https://hao.dev",
         author: "Hao Dong",
         title: "Hao's learning log",
         titleTemplate: "%s · Hao's learning log",
