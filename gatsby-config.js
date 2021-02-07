@@ -32,6 +32,7 @@ module.exports = {
                                 description
                                 keywords
                                 url
+                                site_url: url
                             }
                         }
                     }
@@ -48,11 +49,12 @@ module.exports = {
                                     title: edge.node.title,
                                     url: `${site.siteMetadata.url}/${edge.node.slug}`,
                                     guid: `${site.siteMetadata.url}/${edge.node.slug}`,
+                                    date: edge.node.publishDate,
                                     description:
                                         edge.node.description
                                             .childMarkdownRemark.html,
-                                    published: edge.node.publishDate,
-                                    updated: edge.node.updatedAt,
+                                    // published: edge.node.publishDate,
+                                    // updated: edge.node.updatedAt,
                                 };
                             });
                         },
