@@ -30,8 +30,7 @@ module.exports = {
                             siteMetadata {
                                 title
                                 description
-                                author,
-                                keywords,
+                                keywords
                                 url
                             }
                         }
@@ -80,6 +79,7 @@ module.exports = {
                             }
                         `,
                         output: "/rss.xml",
+                        title: "Hao's Learning Log RSS Feed",
                     },
                 ],
             },
