@@ -33,6 +33,7 @@ module.exports = {
                                 keywords
                                 url
                                 site_url: url
+                                siteUrl: url
                             }
                         }
                     }
@@ -41,23 +42,16 @@ module.exports = {
                     {
                         serialize: ({
                             query: { site, allContentfulBlogPost },
-                        }) => {
-                            return allContentfulBlogPost.edges.map((edge) => {
-                                // TODO: remove published and updated
-
-                                return {
-                                    title: edge.node.title,
-                                    url: `${site.siteMetadata.url}/${edge.node.slug}`,
-                                    guid: `${site.siteMetadata.url}/${edge.node.slug}`,
-                                    date: edge.node.publishDate,
-                                    description:
-                                        edge.node.description
-                                            .childMarkdownRemark.html,
-                                    // published: edge.node.publishDate,
-                                    // updated: edge.node.updatedAt,
-                                };
-                            });
-                        },
+                        }) =>
+                            allContentfulBlogPost.edges.map((edge) => ({
+                                title: edge.node.title,
+                                url: `${site.siteMetadata.siteUrl}/${edge.node.slug}`,
+                                guid: `${site.siteMetadata.siteUrl}/${edge.node.slug}`,
+                                date: edge.node.publishDate,
+                                description:
+                                    edge.node.description.childMarkdownRemark
+                                        .html,
+                            })),
                         query: `
                             {
                                 allContentfulBlogPost(
@@ -68,8 +62,7 @@ module.exports = {
                                         node {
                                             slug
                                             title
-                                            publishDate(formatString: "Do MMM YYYY")
-                                            updatedAt
+                                            publishDate
                                             description {
                                                 childMarkdownRemark {
                                                     html
