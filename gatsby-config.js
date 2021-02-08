@@ -51,6 +51,11 @@ module.exports = {
                                 description:
                                     edge.node.description.childMarkdownRemark
                                         .html,
+                                custom_elements: [
+                                    {
+                                        "content:encoded": `${edge.node.description.childMarkdownRemark.html}${edge.node.body.childMarkdownRemark.html}`,
+                                    },
+                                ],
                             })),
                         query: `
                             {
@@ -68,13 +73,19 @@ module.exports = {
                                                     html
                                                 }
                                             }
+                                            body {
+                                                childMarkdownRemark {
+                                                    htmlAst
+                                                    html
+                                                }
+                                            }
                                         }
                                     }
                                 }
                             }
                         `,
                         output: "/rss.xml",
-                        title: "Hao's Learning Log RSS Feed",
+                        title: "Hao's Learning Log",
                     },
                 ],
             },
