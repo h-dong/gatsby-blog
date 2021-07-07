@@ -8,3 +8,13 @@ package = "netlify-plugin-gatsby-cache"
 package = "@netlify/plugin-sitemap"
   [plugins.inputs]
   buildDir = "public"
+
+[[plugins]]
+package = "netlify-plugin-rss"
+  [plugins.inputs]
+  dirToScan = "/"
+  authorName = "Hao Dong"
+  site_url = "https://haodong.io"
+  title = "Hao Dong RSS Feed"
+  rssDescription = "haodong.io RSS Feed"
+  categories = ["Coding", "Software", "Web Development", "UX", "Productivity", "Career tips", "Personal Development"]
