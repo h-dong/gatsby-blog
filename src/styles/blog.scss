@@ -108,6 +108,11 @@
             border-radius: 6px;
         }
 
+        table {
+            font-family: $pingFang;
+            width: 100%;
+        }
+
         :not(pre) {
             & > code[class*="language-"] {
                 padding: 0.1rem 0.3rem;
