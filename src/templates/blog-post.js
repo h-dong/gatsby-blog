@@ -68,6 +68,9 @@ class BlogPost extends Component {
                         {renderAst(body.childMarkdownRemark.htmlAst)}
                     </div>
                     <div className="post-tags">{blogTags}</div>
+                    <a href="https://www.buymeacoffee.com/heyhao" target="_blank">
+                        <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" />
+                    </a>
                     <DiscussionEmbed
                         shortname={disqusShortname}
                         config={disqusConfig}
