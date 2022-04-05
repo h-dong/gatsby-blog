@@ -20,12 +20,14 @@ class BlogPost extends Component {
         const {
             id,
             title,
+            slug,
             publishDate,
             hero,
             tags,
             description,
             body,
         } = this.props.data.contentfulBlogPost;
+        const { url } = this.props.data.site.siteMetadata;
         const blogTags = tags
             ? tags.map((tag, index) => (
                   <a key={index} href={`/tags/${tag}`}>
@@ -40,6 +42,7 @@ class BlogPost extends Component {
 
         const disqusShortname = "haodong-io";
         const disqusConfig = {
+            url: `${url}/${slug}`,
             identifier: id,
             title: title,
         };
@@ -68,8 +71,16 @@ class BlogPost extends Component {
                         {renderAst(body.childMarkdownRemark.htmlAst)}
                     </div>
                     <div className="post-tags">{blogTags}</div>
-                    <a href="https://www.buymeacoffee.com/heyhao" target="_blank">
-                        <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" />
+                    <a
+                        className="buy-me-coffee"
+                        href="https://www.buymeacoffee.com/heyhao"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        <img
+                            src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+                            alt="Buy Me A Coffee"
+                        />
                     </a>
                     <DiscussionEmbed
                         shortname={disqusShortname}
@@ -85,9 +96,15 @@ export default BlogPost;
 
 export const pageQuery = graphql`
     query($slug: String) {
+        site {
+            siteMetadata {
+                url
+            }
+        }
         contentfulBlogPost(slug: { eq: $slug }) {
             id
             title
+            slug
             publishDate(formatString: "Do MMMM YYYY")
             hero {
                 resize(width: 700, height: 400) {

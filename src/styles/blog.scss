@@ -194,4 +194,15 @@
             }
         }
     }
+
+    .buy-me-coffee {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 3rem;
+
+        img {
+            height: 60px;
+            width: 217px;
+        }
+    }
 }
