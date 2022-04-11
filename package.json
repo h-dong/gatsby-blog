@@ -53,8 +53,6 @@
         "algoliasearch": "^4.2.0",
         "contentful": "^7.14.4",
         "dotenv": "^8.2.0",
-        "prettier": "^2.0.5",
-        "remove-markdown": "^0.3.0",
-        "stopword": "^1.0.1"
+        "prettier": "^2.0.5"
     }
 }
