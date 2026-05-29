@@ -25,7 +25,7 @@
     "dependencies": {
         "dart-sass": "^1.25.0",
         "disqus-react": "^1.0.8",
-        "gatsby": "^2.22.17",
+        "gatsby": "^5.16.1",
         "gatsby-image": "^2.4.6",
         "gatsby-link": "^2.4.4",
         "gatsby-paginate": "^1.1.1",
@@ -37,7 +37,7 @@
         "gatsby-remark-component-parent2div": "^1.2.3",
         "gatsby-remark-external-links": "0.0.4",
         "gatsby-remark-prismjs": "^3.5.3",
-        "gatsby-source-contentful": "^2.3.14",
+        "gatsby-source-contentful": "^8.17.0",
         "gatsby-transformer-remark": "^2.8.14",
         "prismjs": "^1.27.0",
         "react": "^16.13.1",
@@ -51,7 +51,7 @@
     },
     "devDependencies": {
         "algoliasearch": "^4.2.0",
-        "contentful": "^7.14.4",
+        "contentful": "^11.12.3",
         "dotenv": "^8.2.0",
         "prettier": "^2.0.5"
     }
